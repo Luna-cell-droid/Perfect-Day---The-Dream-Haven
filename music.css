@@ -1,0 +1,884 @@
+/* =========================================================
+   MUSIC PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   01. PAGE
+   ========================================================= */
+
+.music-page {
+    width: 100%;
+    padding: 150px 6vw 90px;
+}
+
+
+/* =========================================================
+   02. INTRODUCTION
+   ========================================================= */
+
+.music-intro {
+    width: min(100%, 1100px);
+    margin: 0 auto 65px;
+}
+
+.music-intro .section-label {
+    margin-bottom: 18px;
+
+    color: var(--dusky-lilac);
+
+    font-family: var(--body-font);
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.music-intro h1 {
+    max-width: 800px;
+
+    color: var(--midnight-orchid);
+
+    font-family: var(--heading-font);
+    font-size: clamp(3.2rem, 7vw, 6rem);
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+.music-intro h1 span {
+    display: block;
+
+    color: var(--dusky-lilac);
+
+    font-style: italic;
+}
+
+.music-description {
+    max-width: 650px;
+
+    margin-top: 22px;
+
+    color: var(--muted-text);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   03. MUSIC PLAYER
+   ========================================================= */
+
+.music-player-section {
+    width: min(100%, 1100px);
+
+    margin: 0 auto 100px;
+
+    padding: 35px;
+
+    display: grid;
+    grid-template-columns: 420px 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(49, 42, 68, 0.96),
+            rgba(68, 54, 83, 0.94)
+        );
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* =========================================================
+   04. SONG IMAGE
+   ========================================================= */
+
+.player-image {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: var(--soft-plum);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+.player-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.4s ease;
+}
+
+
+/* =========================================================
+   05. PLAYER CONTENT
+   ========================================================= */
+
+.player-content {
+    padding: 15px 10px;
+}
+
+.player-content .section-label {
+    margin-bottom: 12px;
+
+    color: var(--plum-blossom);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+.player-content h2 {
+    color: var(--white);
+
+    font-size: clamp(2rem, 4vw, 3.2rem);
+
+    line-height: 1.05;
+}
+
+#song-artist {
+    margin-top: 8px;
+
+    color: var(--iris-mist);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   06. SONG PROGRESS
+   ========================================================= */
+
+.song-progress {
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns: 45px 1fr 45px;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--iris-mist);
+
+    font-size: 0.75rem;
+}
+
+#song-progress {
+    width: 100%;
+
+    height: 5px;
+
+    appearance: none;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+}
+
+
+/* Slider track */
+
+#song-progress::-webkit-slider-runnable-track {
+    height: 5px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#song-progress::-moz-range-track {
+    height: 5px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Slider thumb */
+
+#song-progress::-webkit-slider-thumb {
+    appearance: none;
+
+    width: 14px;
+    height: 14px;
+
+    margin-top: -4.5px;
+
+    border-radius: 50%;
+
+    background: var(--plum-blossom);
+
+    cursor: pointer;
+}
+
+#song-progress::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--plum-blossom);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   07. PLAYER BUTTONS
+   ========================================================= */
+
+.player-controls {
+    margin-top: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+}
+
+.player-controls button {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    background: rgba(255, 255, 255, 0.1);
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.player-controls button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Main play button */
+
+#play-button {
+    width: 62px;
+    height: 62px;
+
+    color: var(--midnight-orchid);
+
+    background: var(--plum-blossom);
+
+    font-size: 1.15rem;
+}
+
+#play-button:hover {
+    background: var(--white);
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   08. VOLUME
+   ========================================================= */
+
+.volume-control {
+    margin-top: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--iris-mist);
+
+    font-size: 0.85rem;
+}
+
+#volume-control {
+    width: 120px;
+
+    height: 4px;
+
+    appearance: none;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+}
+
+#volume-control::-webkit-slider-thumb {
+    appearance: none;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: var(--plum-blossom);
+
+    cursor: pointer;
+}
+
+#volume-control::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--plum-blossom);
+
+    cursor: pointer;
+}
+/* =========================================================
+   09. SONG COLLECTION
+   ========================================================= */
+
+.song-section {
+    width: min(100%, 1100px);
+
+    margin: 0 auto 100px;
+}
+
+
+.song-section-heading {
+    margin-bottom: 55px;
+}
+
+
+.song-section-heading .section-label {
+    margin-bottom: 15px;
+
+    color: var(--dusky-lilac);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.song-section-heading h2 {
+    color: var(--midnight-orchid);
+
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+
+.song-section-heading h2 span {
+    display: block;
+
+    color: var(--dusky-lilac);
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   10. SONG MOODS
+   ========================================================= */
+
+.song-mood {
+    margin-bottom: 90px;
+}
+
+
+.song-mood-heading {
+    margin-bottom: 30px;
+}
+
+
+.song-mood-heading .section-label {
+    margin-bottom: 10px;
+
+    color: var(--dusky-lilac);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+.song-mood-heading h3 {
+    margin-bottom: 8px;
+
+    color: var(--midnight-orchid);
+
+    font-family: var(--heading-font);
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    font-weight: 400;
+}
+
+
+.song-mood-heading > p:last-child {
+    color: var(--muted-text);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   11. PLAYLIST GRID
+   ========================================================= */
+
+.playlist-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   12. SONG CARD
+   ========================================================= */
+
+.song-card {
+    width: 100%;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    border: 1px solid rgba(49, 42, 68, 0.08);
+
+    border-radius: 22px;
+
+    background: var(--warm-white);
+
+    box-shadow: var(--shadow-soft);
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.song-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* =========================================================
+   SONG IMAGE
+   ========================================================= */
+
+.song-card img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   SONG INFORMATION
+   ========================================================= */
+
+.song-card > div {
+    padding: 20px;
+}
+
+
+.song-card-label {
+    margin-bottom: 7px;
+
+    color: var(--dusky-lilac);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+
+.song-card h3 {
+    margin-bottom: 5px;
+
+    color: var(--midnight-orchid);
+
+    font-family: var(--heading-font);
+
+    font-size: 1.45rem;
+
+    font-weight: 400;
+}
+
+
+.song-card > div > p:last-child {
+    color: var(--muted-text);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   SONG CARD WHEN SELECTED
+   ========================================================= */
+
+.song-card.active {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(49, 42, 68, 0.16);
+
+    border-color: var(--dusky-lilac);
+}
+
+
+/* =========================================================
+   13. SONG COLLECTION SPACING
+   ========================================================= */
+
+.playlist-category {
+    margin-bottom: 70px;
+}
+
+
+.playlist-category-title {
+    margin-bottom: 25px;
+
+    color: var(--midnight-orchid);
+
+    font-family: var(--heading-font);
+
+    font-size: 1.8rem;
+
+    font-weight: 400;
+}
+/* =========================================================
+   12. MUSIC MESSAGE
+   ========================================================= */
+
+.music-message {
+    width: min(100%, 850px);
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.music-message .section-label {
+    margin-bottom: 18px;
+
+    color: var(--dusky-lilac);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+.music-message h2 {
+    color: var(--midnight-orchid);
+
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+}
+
+.music-message h2 span {
+    display: block;
+
+    color: var(--dusky-lilac);
+
+    font-style: italic;
+}
+
+.music-message > p:last-child {
+    margin-top: 20px;
+
+    color: var(--muted-text);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   13. MUSIC BUTTON
+   ========================================================= */
+
+.music-button {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    color: var(--midnight-orchid);
+
+    background: var(--plum-blossom);
+
+    font-family: var(--body-font);
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.music-button:hover {
+    background: var(--iris-mist);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   14. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .music-page {
+        padding: 130px 4vw 70px;
+    }
+
+    .music-player-section {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 28px;
+    }
+
+    .player-image {
+        width: min(100%, 500px);
+
+        margin: 0 auto;
+    }
+
+    .song-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .music-page {
+        padding: 110px 20px 50px;
+    }
+
+    .music-intro {
+        margin-bottom: 45px;
+    }
+
+    .music-intro h1 {
+        font-size: 3rem;
+    }
+
+    .music-player-section {
+        padding: 20px;
+
+        border-radius: 22px;
+    }
+
+    .player-content {
+        padding: 5px;
+    }
+
+    .song-progress {
+        grid-template-columns: 38px 1fr 38px;
+
+        gap: 7px;
+    }
+
+    .volume-control {
+        justify-content: center;
+    }
+
+    .song-card > div {
+        padding: 20px;
+    }
+
+}
+/* =========================================================
+   GET UP & GO — PLAYLIST SONG CARDS
+   ========================================================= */
+
+.playlist-category {
+    width: 100%;
+}
+
+.playlist-category-title {
+    display: none;
+}
+
+.playlist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* Individual song card */
+
+.playlist-grid .song-card {
+    width: 100%;
+
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(49, 42, 68, 0.08);
+    border-radius: 24px;
+
+    background: var(--warm-white);
+
+    box-shadow: var(--shadow-soft);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.playlist-grid .song-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* Song artwork */
+
+.playlist-grid .song-card img {
+    width: 100%;
+    height: 220px;
+
+    aspect-ratio: auto;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Song information */
+
+.playlist-grid .song-card > div {
+    padding: 18px 20px 20px;
+}
+
+
+.playlist-grid .song-card-label {
+    margin-bottom: 7px;
+
+    color: var(--dusky-lilac);
+
+    font-size: 0.65rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+
+.playlist-grid .song-card h3 {
+    margin-bottom: 5px;
+
+    color: var(--midnight-orchid);
+
+    font-family: var(--heading-font);
+
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+
+.playlist-grid .song-card > div > p:last-child {
+    margin: 0;
+
+    color: var(--muted-text);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   PLAYLIST RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .playlist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .playlist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .playlist-grid .song-card img {
+        height: 240px;
+    }
+
+}
