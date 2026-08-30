@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="A Perfect Day — a quiet digital garden for music, memories, reflection, creativity and little moments of joy.">
+
+    <title>A Perfect Day</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="music.css">
+    <link rel="stylesheet" href="garden.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="weather.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="navbar-logo">
+            <a href="index.html">Perfect Day</a>
+        </div>
+
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="weather.html" class="active">Weather</a>
+            <a href="garden.html">Garden</a>
+            <a href="music.html">Music</a>
+            <a href="play.html">Play</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Weather Page -->
+    <main class="weather-page">
+
+        <!-- Page Introduction -->
+        <section class="weather-header">
+
+            <p class="section-label">TODAY'S SKY</p>
+
+            <h1>How's the world outside?</h1>
+
+            <p>
+                Take a little look before you step into your day.
+            </p>
+
+        </section>
+
+
+        <!-- Main Weather Card -->
+        <section class="weather-card">
+
+            <div class="weather-location">
+                <span class="location-icon">⌖</span>
+                <span id="location">Your location</span>
+            </div>
+
+
+            <div class="weather-main">
+
+                <div class="weather-icon" id="weather-icon">
+                    ☁
+                </div>
+
+                <div class="temperature">
+                    <span id="temperature">--</span>
+                    <span class="degree">°</span>
+                </div>
+
+                <p id="condition">
+                    Loading weather...
+                </p>
+
+            </div>
+
+
+            <div class="weather-range">
+
+                <span>
+                    H <strong id="high">--°</strong>
+                </span>
+
+                <span>
+                    L <strong id="low">--°</strong>
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Weather Details -->
+        <section class="weather-details">
+
+            <div class="weather-detail">
+
+                <span>☔</span>
+
+                <p>Rain</p>
+
+                <strong id="rain">--%</strong>
+
+            </div>
+
+
+            <div class="weather-detail">
+
+                <span>♡</span>
+
+                <p>Feels like</p>
+
+                <strong id="feels-like">--°</strong>
+
+            </div>
+
+
+            <div class="weather-detail">
+
+                <span>≋</span>
+
+                <p>Wind</p>
+
+                <strong id="wind">-- km/h</strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- Little Daily Message -->
+        <section class="weather-message">
+
+            <p class="section-label">A LITTLE NOTE</p>
+
+            <h2 id="weather-message">
+                Whatever the weather,
+                make today yours.
+            </h2>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            Made for the little moments that make a day feel perfect.
+        </p>
+
+    </footer>
+
+    <script src="weather.js"></script>
+
+</body>
+</body>
+</html>

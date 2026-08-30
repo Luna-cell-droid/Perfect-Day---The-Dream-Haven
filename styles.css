@@ -293,6 +293,10 @@ h2 span {
     transition:
         color var(--transition-fast),
         transform var(--transition-fast);
+        color: #aaa1c8;
+text-decoration: none;
+display: inline-block;
+cursor: pointer;
 }
 
 
@@ -3285,4 +3289,9 @@ h2 span {
     50% {
         transform: translateY(calc(-50% - 8px));
     }
+}
+.weather-card .text-button {
+    color: #312a44;
+    opacity: 1;
+    visibility: visible;
 }
