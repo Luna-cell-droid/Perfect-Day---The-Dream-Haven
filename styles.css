@@ -3389,3 +3389,318 @@ cursor: pointer;
     font-size: 12px;
     font-weight: 500;
 }
+.home-garden-progress {
+    flex: 1;
+}
+
+.home-garden-progress .progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    color: var(--plum-blossom);
+    font-size: 0.85rem;
+}
+
+.home-garden-progress .progress-bar {
+    width: 100%;
+    height: 10px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.home-garden-progress .progress-fill {
+    width: 0%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--plum-blossom);
+}
+/* =========================================================
+   HOMEPAGE GARDEN INTRO — FIX
+   ========================================================= */
+
+.garden-section .garden-intro {
+    width: min(100%, var(--max-width));
+    margin: 0 auto 70px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 60px;
+}
+
+
+/* Keep all Garden introduction text together */
+
+.garden-section .garden-intro .section-heading {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+}
+
+
+/* Eyebrow */
+
+.garden-section .garden-intro .eyebrow {
+    display: block;
+    margin-bottom: 18px;
+}
+
+
+/* Main heading */
+
+.garden-section .garden-intro .section-heading h2 {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+
+    margin-bottom: 18px;
+
+    font-family: var(--heading-font);
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    line-height: 1.05;
+}
+
+
+/* Italic "garden grow." */
+
+.garden-section .garden-intro .section-heading h2 span {
+    display: block;
+}
+
+
+/* Description */
+
+.garden-section .garden-intro .section-heading > p:last-child {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+
+    margin-top: 0;
+}
+
+
+/* Explore button */
+
+.garden-section .garden-intro > .button {
+    flex-shrink: 0;
+    margin-bottom: 5px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .garden-section .garden-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .garden-section .garden-intro .section-heading {
+        width: 100%;
+    }
+
+}
+/* =========================================================
+   GARDEN SECTION — FINAL LAYOUT FIX
+   ========================================================= */
+
+.garden-section .garden-intro {
+    width: 100%;
+    max-width: 1240px;
+
+    margin: 0 auto 70px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 50px;
+}
+
+
+.garden-section .garden-intro .section-heading {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0;
+}
+
+
+.garden-section .garden-intro .section-heading h2 {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 0 18px;
+
+    font-size: clamp(3rem, 5vw, 4.4rem);
+    line-height: 1.05;
+}
+
+
+.garden-section .garden-intro .section-heading h2 span {
+    display: inline;
+}
+
+
+.garden-section .garden-intro .section-heading > p:last-child {
+    width: 100%;
+    max-width: 700px;
+}
+
+
+.garden-section .garden-intro > .button {
+    width: auto;
+    flex-shrink: 0;
+
+    margin: 0 0 5px;
+}
+
+
+/* Mobile */
+@media (max-width: 900px) {
+
+    .garden-section .garden-intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .garden-section .garden-intro .section-heading,
+    .garden-section .garden-intro .section-heading h2 {
+        max-width: 100%;
+    }
+
+}
+/* =========================================================
+   GARDEN INTRO
+   ========================================================= */
+
+.garden-section .garden-intro {
+    width: min(100%, 1240px);
+    margin: 0 auto 70px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    text-align: left;
+}
+
+
+/* Heading area */
+
+.garden-section .garden-heading {
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+}
+
+
+/* Small label */
+
+.garden-section .garden-heading .eyebrow {
+    margin-bottom: 18px;
+
+    text-align: left;
+}
+
+
+/* Main heading */
+
+.garden-section .garden-heading h2 {
+    margin: 0 0 20px;
+
+    max-width: 760px;
+
+    color: var(--midnight-orchid);
+
+    font-family: var(--heading-font);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 400;
+
+    line-height: 0.98;
+
+    text-align: left;
+}
+
+
+/* "Watch your" */
+
+.garden-section .garden-title-main {
+    display: block;
+
+    color: var(--midnight-orchid);
+
+    white-space: nowrap;
+}
+
+
+/* "garden grow." */
+
+.garden-section .garden-title-accent {
+    display: block;
+
+    color: var(--dusky-lilac);
+
+    font-style: italic;
+
+    white-space: nowrap;
+}
+
+
+/* Description */
+
+.garden-section .garden-heading > p:last-child {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: var(--muted-text);
+
+    font-size: 1.05rem;
+
+    text-align: left;
+}
+
+
+/* Explore button */
+
+.garden-section .garden-intro > .button {
+    flex-shrink: 0;
+
+    margin-bottom: 5px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .garden-section .garden-intro {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .garden-section .garden-heading h2 {
+        font-size: clamp(3rem, 10vw, 4.5rem);
+    }
+
+}

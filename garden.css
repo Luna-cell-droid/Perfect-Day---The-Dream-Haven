@@ -1,0 +1,662 @@
+/* =========================================================
+   GARDEN PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   01. PAGE
+   ========================================================= */
+
+.garden-page {
+    width: 100%;
+    padding: 150px 6vw 80px;
+}
+/* =========================================================
+   02. INTRODUCTION
+   ========================================================= */
+
+.garden-hero,
+.garden-intro {
+    display: grid;
+    grid-template-columns: 200px 1fr 300px;
+    align-items: end;
+    gap: 40px;
+    width: min(100%, 1240px);
+    margin: 0 auto 70px;
+}
+
+/* Left Label Alignment */
+.garden-hero .section-label,
+.garden-intro .section-label {
+    margin-bottom: 0;
+    align-self: end;
+    font-family: var(--font-handwriting, sans-serif);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8a7b8e;
+}
+
+/* Center Large Heading */
+.garden-hero .hero-title,
+.garden-intro h1 {
+    margin: 0;
+    font-family: var(--heading-font, serif);
+    font-size: 4.5rem;
+    line-height: 1.05;
+    text-align: left;
+    color: #38293d;
+}
+
+.garden-hero .hero-title em,
+.garden-intro h1 span {
+    display: inline;
+    font-style: italic;
+    color: #7b6282;
+}
+
+/* Right Description Paragraph */
+.garden-hero .hero-description,
+.garden-description {
+    margin: 0;
+    align-self: end;
+    font-family: var(--body-font, sans-serif);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 320px;
+    color: #5a4b5e;
+}
+/* =========================================================
+   03. MAIN GARDEN CONTAINER
+   ========================================================= */
+
+.garden-container {
+    position: relative;
+
+    width: min(100%, 1240px);
+    min-height: 720px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-large);
+
+    background:
+        radial-gradient(
+            circle at 70% 45%,
+            rgba(215, 197, 214, 0.38),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #443653 0%,
+            #594867 48%,
+            #88708e 100%
+        );
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* =========================================================
+   04. DECORATIVE STARS
+   ========================================================= */
+
+.garden-star {
+    position: absolute;
+
+    z-index: 5;
+
+    color: var(--silver-wisteria);
+
+    font-size: 1.6rem;
+
+    text-shadow:
+        0 0 12px rgba(255, 255, 255, 0.35);
+
+    opacity: 0.9;
+}
+
+.star-one {
+    top: 65px;
+    left: 13%;
+}
+
+.star-two {
+    top: 250px;
+    left: 31%;
+
+    font-size: 1.1rem;
+}
+
+.star-three {
+    top: 95px;
+    right: 10%;
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   05. GARDEN SCENE
+   ========================================================= */
+
+.garden-scene {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   06. SOFT GLOW
+   ========================================================= */
+
+.garden-glow {
+    position: absolute;
+
+    top: 170px;
+    left: 50%;
+
+    width: 330px;
+    height: 330px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(218, 212, 223, 0.65) 0%,
+            rgba(186, 176, 200, 0.28) 38%,
+            transparent 72%
+        );
+
+    filter: blur(5px);
+}
+
+
+/* =========================================================
+   07. TREE
+   ========================================================= */
+
+.garden-tree {
+    position: absolute;
+
+    left: 50%;
+    bottom: 185px;
+
+    width: 420px;
+    height: 430px;
+
+    transform: translateX(-50%);
+}
+
+
+/* Main tree crown */
+
+.tree-top {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 300px;
+    height: 300px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #c9bdd2 0%,
+            #a99ab6 42%,
+            #79657f 100%
+        );
+
+    box-shadow:
+        0 0 55px rgba(215, 197, 214, 0.2);
+}
+
+
+/* Left side of tree */
+
+.tree-side.left {
+    position: absolute;
+
+    top: 125px;
+    left: 25px;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 45% 35%,
+            #8d7995,
+            #695472
+        );
+}
+/* Branches */
+
+.tree-trunk::before,
+.tree-trunk::after {
+    content: "";
+
+    position: absolute;
+
+    top: 30px;
+
+    width: 28px;
+    height: 150px;
+
+    border-radius: 20px;
+
+    background: #4A384F;
+}
+
+.tree-trunk::before {
+    left: -15px;
+    transform: rotate(-35deg);
+}
+
+.tree-trunk::after {
+    right: -15px;
+    transform: rotate(35deg);
+}
+
+/* Right side of tree */
+
+.tree-side.right {
+    position: absolute;
+
+    top: 125px;
+    right: 25px;
+
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 55% 35%,
+            #8d7995,
+            #695472
+        );
+}
+
+
+/* Tree trunk */
+
+.tree-trunk {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 54px;
+    height: 235px;
+
+    transform: translateX(-50%);
+
+    border-radius: 25px 25px 8px 8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3c304b,
+            #5a4561,
+            #3b304a
+        );
+}
+
+/* =========================================================
+   08. FLOWERS
+   ========================================================= */
+
+.garden-flower {
+    position: absolute;
+
+    z-index: 4;
+
+    color: var(--plum-blossom);
+
+    font-size: 4rem;
+
+    text-shadow:
+        0 0 18px rgba(215, 197, 214, 0.35);
+}
+
+.flower-one {
+    left: 17%;
+    bottom: 195px;
+}
+
+.flower-two {
+    right: 17%;
+    bottom: 200px;
+
+    font-size: 3.5rem;
+}
+
+
+/* =========================================================
+   09. GROUND
+   ========================================================= */
+
+.garden-ground {
+    position: absolute;
+
+    left: -5%;
+    bottom: 0;
+
+    width: 110%;
+    height: 270px;
+
+    border-radius: 50% 50% 0 0 / 35% 35% 0 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #3d314d 0%,
+            #312a44 100%
+        );
+}
+
+
+/* =========================================================
+   10. PROGRESS CARD
+   ========================================================= */
+
+.garden-progress {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 3%;
+    right: 3%;
+    bottom: 30px;
+
+    min-height: 125px;
+
+    padding: 25px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 22px;
+
+    background: rgba(49, 42, 68, 0.88);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* Progress text */
+
+.progress-text {
+    flex: 1;
+}
+
+.progress-text .section-label {
+    margin-bottom: 8px;
+
+    color: var(--plum-blossom);
+
+    font-family: var(--body-font);
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.progress-text h2 {
+    color: var(--white);
+
+    font-size: 1.8rem;
+}
+
+
+/* =========================================================
+   11. PROGRESS BAR
+   ========================================================= */
+
+.progress-area {
+    width: min(45%, 500px);
+}
+
+.progress-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    color: var(--plum-blossom);
+
+    font-size: 0.85rem;
+}
+
+.progress-heading strong {
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--plum-blossom);
+
+    transition: width 0.6s ease;
+}
+
+
+/* =========================================================
+   12. LITTLE REMINDER
+   ========================================================= */
+
+.garden-message {
+    width: min(100%, 900px);
+
+    margin: 110px auto 50px;
+
+    text-align: center;
+}
+
+.garden-message .section-label {
+    margin-bottom: 18px;
+
+    color: var(--dusky-lilac);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+.garden-message h2 {
+    color: var(--midnight-orchid);
+
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+}
+
+.garden-message h2 span {
+    display: block;
+
+    color: var(--dusky-lilac);
+
+    font-style: italic;
+}
+
+.garden-message > p:last-child {
+    margin-top: 20px;
+
+    color: var(--muted-text);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   13. RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .garden-page {
+        padding: 130px 4vw 60px;
+    }
+
+    .garden-container {
+        min-height: 650px;
+    }
+
+    .garden-tree {
+        transform: translateX(-50%) scale(0.85);
+        transform-origin: bottom center;
+    }
+
+    .garden-progress {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 18px;
+
+        padding: 22px 25px;
+    }
+
+    .progress-area {
+        width: 100%;
+    }
+
+    .flower-one {
+        left: 8%;
+    }
+
+    .flower-two {
+        right: 8%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .garden-page {
+        padding: 110px 20px 50px;
+    }
+
+    .garden-intro {
+        margin-bottom: 45px;
+    }
+
+    .garden-intro h1 {
+        font-size: 3rem;
+    }
+
+    .garden-container {
+        min-height: 620px;
+
+        border-radius: 22px;
+    }
+
+    .garden-tree {
+        transform: translateX(-50%) scale(0.65);
+    }
+
+    .garden-glow {
+        top: 130px;
+
+        width: 250px;
+        height: 250px;
+    }
+
+    .garden-flower {
+        font-size: 2.5rem;
+    }
+
+    .flower-one {
+        left: 5%;
+    }
+
+    .flower-two {
+        right: 5%;
+    }
+
+    .garden-progress {
+        left: 4%;
+        right: 4%;
+        bottom: 20px;
+
+        padding: 20px;
+    }
+
+    .progress-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .garden-message {
+        margin-top: 75px;
+    }
+}
+/* Small left label */
+.section-label {
+    font-family: var(--font-handwriting, sans-serif);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8a7b8e;
+}
+
+/* Large central heading */
+.hero-title {
+    font-family: var(--heading-font, serif);
+    font-size: 4.5rem;
+    line-height: 1.1;
+    color: #38293d;
+}
+
+.hero-title em {
+    font-style: italic;
+    color: #7b6282; /* Accent purple for 'garden' and 'grow' */
+}
+
+/* Right description paragraph */
+.hero-description {
+    font-family: var(--body-font, sans-serif);
+    font-size: 1.1rem;
+    max-width: 320px;
+    color: #5a4b5e;
+}
