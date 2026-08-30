@@ -8,144 +8,63 @@
     <meta name="description"
         content="A Perfect Day — a quiet digital garden for music, memories, reflection, creativity and little moments of joy.">
 
-    <title>A Perfect Day</title>
+    <title>A Perfect Day - Music</title>
 
-
-    <!-- =========================================
-         CSS
-    ========================================== -->
-
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="music.css">
 
-
-    <!-- =========================================
-         GOOGLE FONTS
-    ========================================== -->
-
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================================
+    <!-- =====================================================
          NAVIGATION
-    ========================================== -->
+         ===================================================== -->
 
     <header class="site-header">
 
         <nav class="navbar">
 
-
-            <!-- LOGO -->
-
             <a href="index.html" class="logo">
-
-                <span class="logo-main">
-                    Perfect Day
-                </span>
-
-                <span class="logo-sub">
-                    a little place to grow
-                </span>
-
+                <span class="logo-main">Perfect Day</span>
+                <span class="logo-sub">a little place to grow</span>
             </a>
-
-
-
-            <!-- NAVIGATION LINKS -->
 
             <div class="nav-links">
 
-                <a href="index.html">
-                    Today
-                </a>
-
-                <a href="garden.html">
-                    Garden
-                </a>
-
-                <a href="music.html" class="active">
-                    Music
-                </a>
-
-                <a href="play.html">
-                    Play
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-
-
-                <!-- EXPLORE DROPDOWN -->
+                <a href="index.html">Today</a>
+                <a href="garden.html">Garden</a>
+                <a href="music.html" class="active">Music</a>
+                <a href="play.html">Play</a>
+                <a href="about.html">About</a>
 
                 <div class="nav-dropdown">
 
-                    <button
-                        class="dropdown-button"
-                        type="button">
-
-                        Explore
-
-                        <span>
-                            ⌄
-                        </span>
-
+                    <button class="dropdown-button" type="button">
+                        Explore <span>⌄</span>
                     </button>
 
-
                     <div class="dropdown-menu">
-
-                        <a href="index.html#todo">
-                            To-Do
-                        </a>
-
-                        <a href="index.html#brain-dump">
-                            Brain Dump
-                        </a>
-
-                        <a href="mood.html">
-                            Mood
-                        </a>
-
-                        <a href="index.html#calendar">
-                            Calendar
-                        </a>
-
-                        <a href="index.html#journal">
-                            Journal
-                        </a>
-
-                        <a href="index.html#floweropedia">
-                            Floweropedia
-                        </a>
-
-                        <a href="index.html#quotes">
-                            Quotes
-                        </a>
-
+                        <a href="index.html#todo">To-Do</a>
+                        <a href="index.html#brain-dump">Brain Dump</a>
+                        <a href="mood.html">Mood</a>
+                        <a href="index.html#calendar">Calendar</a>
+                        <a href="index.html#journal">Journal</a>
+                        <a href="index.html#floweropedia">Floweropedia</a>
+                        <a href="index.html#quotes">Quotes</a>
                     </div>
 
                 </div>
 
             </div>
-
-
-
-            <!-- QUIET SPACE -->
 
             <a href="#quiet-space" class="nav-quiet">
                 Quiet Space
@@ -156,18 +75,16 @@
     </header>
 
 
-
-
-    <!-- =========================================
+    <!-- =====================================================
          MUSIC PAGE
-    ========================================== -->
+         ===================================================== -->
 
     <main class="music-page">
 
 
-        <!-- =====================================
+        <!-- =================================================
              INTRODUCTION
-        ====================================== -->
+             ================================================= -->
 
         <section class="music-intro">
 
@@ -175,31 +92,22 @@
                 YOUR SOUNDTRACK
             </p>
 
-
             <h1>
-
-                A song for
-                <span>every little moment.</span>
-
+                A song for <span>every little moment.</span>
             </h1>
 
-
             <p class="music-description">
-
                 Sometimes you need something bright.
                 Sometimes you need something quiet.
                 And sometimes you just need a song to stay with you.
-
             </p>
 
         </section>
 
 
-
-
-        <!-- =====================================
+        <!-- =================================================
              MAIN MUSIC PLAYER
-        ====================================== -->
+             ================================================= -->
 
         <section class="music-player-section">
 
@@ -211,34 +119,30 @@
                 <img
                     id="song-image"
                     src="assets/images/song1.jpg"
-                    alt="Current song artwork">
+                    alt="Current song artwork"
+                >
 
             </div>
 
 
-
-            <!-- PLAYER CONTENT -->
+            <!-- PLAYER INFORMATION -->
 
             <div class="player-content">
-
 
                 <p class="section-label">
                     NOW PLAYING
                 </p>
 
-
                 <h2 id="song-title">
                     Choose a song
                 </h2>
-
 
                 <p id="song-artist">
                     BTS
                 </p>
 
 
-
-                <!-- SONG PROGRESS -->
+                <!-- PROGRESS -->
 
                 <div class="song-progress">
 
@@ -246,14 +150,13 @@
                         0:00
                     </span>
 
-
                     <input
                         type="range"
                         id="song-progress"
                         min="0"
                         max="100"
-                        value="0">
-
+                        value="0"
+                    >
 
                     <span id="song-duration">
                         0:00
@@ -262,64 +165,51 @@
                 </div>
 
 
-
                 <!-- PLAYER CONTROLS -->
 
                 <div class="player-controls">
 
-
                     <button
                         type="button"
                         id="previous-button"
-                        aria-label="Previous song">
-
+                        aria-label="Previous song"
+                    >
                         ◀
-
                     </button>
-
-
 
                     <button
                         type="button"
                         id="play-button"
-                        aria-label="Play song">
-
+                        aria-label="Play song"
+                    >
                         ▶
-
                     </button>
-
-
 
                     <button
                         type="button"
                         id="next-button"
-                        aria-label="Next song">
-
+                        aria-label="Next song"
+                    >
                         ▶
-
                     </button>
 
-
                 </div>
-
 
 
                 <!-- VOLUME -->
 
                 <div class="volume-control">
 
-                    <span>
-                        🔊
-                    </span>
-
+                    <span>🔊</span>
 
                     <input
                         type="range"
                         id="volume-control"
                         min="0"
-                        max="1"
+                        max="100"
                         step="0.01"
-                        value="1">
+                        value="1"
+                    >
 
                 </div>
 
@@ -328,16 +218,11 @@
         </section>
 
 
-
-
-        <!-- =====================================
+        <!-- =================================================
              SONG COLLECTION
-        ====================================== -->
+             ================================================= -->
 
         <section class="song-section">
-
-
-            <!-- SECTION HEADING -->
 
             <div class="song-section-heading">
 
@@ -345,1565 +230,818 @@
                     YOUR LITTLE PLAYLIST
                 </p>
 
-
                 <h2>
-
-                    Pick a song
-                    <span>for the moment.</span>
-
+                    Pick a song <span>for the moment.</span>
                 </h2>
 
             </div>
-<!-- =================================
-     SONG PLAYLISTS
-================================== -->
 
-<section class="song-playlists">
 
+            <div class="song-playlists">
 
-    <!-- ================================
-         ENERGY
-    ================================= -->
 
-    <section class="song-mood">
+                <!-- =================================================
+                     ENERGY CATEGORY
+                     ================================================= -->
 
-        <div class="song-mood-heading">
+                <section class="song-mood">
 
-            <p class="section-label">
-                WHEN YOU NEED ENERGY
-            </p>
+                    <div class="song-mood-heading">
 
-            <h3>
-                Get up & go
-            </h3>
+                        <p class="section-label">
+                            WHEN YOU NEED ENERGY
+                        </p>
 
-            <p>
-                Something bright, energetic and
-                impossible not to smile to.
-            </p>
+                        <h3>
+                            Get up & go
+                        </h3>
 
-        </div>
+                        <p>
+                            Something bright, energetic and impossible not to smile to.
+                        </p>
 
+                    </div>
 
-        <div class="playlist-grid">
 
+                    <div class="playlist-grid">
 
-            <button
-                class="song-card"
-                type="button"
-                data-audio="assets/music/song1.mp3"
-                data-image="assets/images/song1.jpg"
-                data-title="Song One"
-                data-artist="BTS">
 
-                <img
-                    src="assets/images/song1.jpg"
-                    alt="Song artwork">
+                        <!-- SONG 1 — YOUTUBE -->
 
-                <div>
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-youtube="RAchirIVZAM"
+                            data-image="assets/images/song1.jpg"
+                            data-title="Amagdala"
+                            data-artist="BTS"
+                        >
 
-                    <p class="song-card-label">
-                        ENERGY
-                    </p>
+                            <img
+                                src="assets/images/song1.jpg"
+                                alt="Amagdala artwork"
+                            >
 
-                    <h3>
-                        Song One
-                    </h3>
+                            <div>
 
-                    <p>
-                        BTS
-                    </p>
+                                <p class="song-card-label">
+                                    ENERGY
+                                </p>
 
-                </div>
+                                <h3>
+                                    Amagdala
+                                </h3>
 
-            </button>
+                                <p>
+                                    BTS
+                                </p>
 
+                            </div>
 
-            <button
-                class="song-card"
-                type="button"
-                data-audio="assets/music/song2.mp3"
-                data-image="assets/images/song2.jpg"
-                data-title="Song Two"
-                data-artist="BTS">
+                        </button>
 
-                <img
-                    src="assets/images/song2.jpg"
-                    alt="Song artwork">
 
-                <div>
+                        <!-- SONG 2 -->
 
-                    <p class="song-card-label">
-                        ENERGY
-                    </p>
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-audio="assets/music/song2.mp3"
+                            data-image="assets/images/song2.jpg"
+                            data-title="Song Two"
+                            data-artist="BTS"
+                        >
 
-                    <h3>
-                        Song Two
-                    </h3>
+                            <img
+                                src="assets/images/song2.jpg"
+                                alt="Song Two artwork"
+                            >
 
-                    <p>
-                        BTS
-                    </p>
+                            <div>
+                                <p class="song-card-label">ENERGY</p>
+                                <h3>Song Two</h3>
+                                <p>BTS</p>
+                            </div>
 
-                </div>
+                        </button>
 
-            </button>
 
+                        <!-- SONG 3 -->
 
-            <button
-                class="song-card"
-                type="button"
-                data-audio="assets/music/song3.mp3"
-                data-image="assets/images/song3.jpg"
-                data-title="Song Three"
-                data-artist="BTS">
-
-                <img
-                    src="assets/images/song3.jpg"
-                    alt="Song artwork">
-
-                <div>
-
-                    <p class="song-card-label">
-                        ENERGY
-                    </p>
-
-                    <h3>
-                        Song Three
-                    </h3>
-
-                    <p>
-                        BTS
-                    </p>
-
-                </div>
-
-            </button>
-
-        </div>
-
-    </section>
-                            <button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-
-    <!-- ================================
-         CALM
-    ================================= -->
-
-    <section class="song-mood">
-
-        <div class="song-mood-heading">
-
-            <p class="section-label">
-                WHEN YOU NEED CALM
-            </p>
-
-            <h3>
-                Take a breath
-            </h3>
-
-            <p>
-                Softer songs for slower moments.
-            </p>
-
-        </div>
-
-
-        <div class="playlist-grid">
-
-
-            <button
-                class="song-card"
-                type="button"
-                data-audio="assets/music/song4.mp3"
-                data-image="assets/images/song4.jpg"
-                data-title="Song Four"
-                data-artist="BTS">
-
-                <img
-                    src="assets/images/song4.jpg"
-                    alt="Song artwork">
-
-                <div>
-
-                    <p class="song-card-label">
-                        CALM
-                    </p>
-
-                    <h3>
-                        Song Four
-                    </h3>
-
-                    <p>
-                        BTS
-                    </p>
-
-                </div>
-
-            </button>
-                <button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-
-            <button
-                class="song-card"
-                type="button"
-                data-audio="assets/music/song5.mp3"
-                data-image="assets/images/song5.jpg"
-                data-title="Song Five"
-                data-artist="BTS">
-
-                <img
-                    src="assets/images/song5.jpg"
-                    alt="Song artwork">
-
-                <div>
-
-                    <p class="song-card-label">
-                        CALM
-                    </p>
-
-                    <h3>
-                        Song Five
-                    </h3>
-
-                    <p>
-                        BTS
-                    </p>
-
-                </div>
-
-            </button>
-
-
-            <button
-                class="song-card"
-                type="button"
-                data-audio="assets/music/song6.mp3"
-                data-image="assets/images/song6.jpg"
-                data-title="Song Six"
-                data-artist="BTS">
-
-                <img
-                    src="assets/images/song6.jpg"
-                    alt="Song artwork">
-
-                <div>
-
-                    <p class="song-card-label">
-                        CALM
-                    </p>
-
-                    <h3>
-                        Song Six
-                    </h3>
-
-                    <p>
-                        BTS
-                    </p>
-
-                </div>
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================================
-         COMFORT
-    ================================= -->
-
-    <section class="song-mood">
-
-        <div class="song-mood-heading">
-
-            <p class="section-label">
-                WHEN YOU NEED COMFORT
-            </p>
-
-            <h3>
-                Stay for a while
-            </h3>
-
-            <p>
-                A little musical company for difficult days.
-            </p>
-
-        </div>
-
-
-        <div class="playlist-grid">
-
-
-            <button
-                class="song-card"
-                type="button"
-                data-audio="assets/music/song7.mp3"
-                data-image="assets/images/song7.jpg"
-                data-title="Song Seven"
-                data-artist="BTS">
-
-                <img
-                    src="assets/images/song7.jpg"
-                    alt="Song artwork">
-
-                <div>
-
-                    <p class="song-card-label">
-                        COMFORT
-                    </p>
-
-                    <h3>
-                        Song Seven
-                    </h3>
-
-                    <p>
-                        BTS
-                    </p>
-
-                </div>
-
-            </button>
-                    <button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button><button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button><button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-<button
-    class="song-card"
-    type="button"
-    data-audio="assets/music/song10.mp3"
-    data-image="assets/images/song10.jpg"
-    data-title="Song Ten"
-    data-artist="BTS">
-
-    <img
-        src="assets/images/song10.jpg"
-        alt="Song artwork">
-
-    <div>
-
-        <p class="song-card-label">
-            ENERGY
-        </p>
-
-        <h3>
-            Song Ten
-        </h3>
-
-        <p>
-            BTS
-        </p>
-
-    </div>
-
-</button>
-
-            <button
-                class="song-card"
-                type="button"
-                data-audio="assets/music/song8.mp3"
-                data-image="assets/images/song8.jpg"
-                data-title="Song Eight"
-                data-artist="BTS">
-
-                <img
-                    src="assets/images/song8.jpg"
-                    alt="Song artwork">
-
-                <div>
-
-                    <p class="song-card-label">
-                        COMFORT
-                    </p>
-
-                    <h3>
-                        Song Eight
-                    </h3>
-
-                    <p>
-                        BTS
-                    </p>
-
-                </div>
-
-            </button>
-
-
-            <button
-                class="song-card"
-                type="button"
-                data-audio="assets/music/song9.mp3"
-                data-image="assets/images/song9.jpg"
-                data-title="Song Nine"
-                data-artist="BTS">
-
-                <img
-                    src="assets/images/song9.jpg"
-                    alt="Song artwork">
-
-                <div>
-
-                    <p class="song-card-label">
-                        COMFORT
-                    </p>
-
-                    <h3>
-                        Song Nine
-                    </h3>
-
-                    <p>
-                        BTS
-                    </p>
-
-                </div>
-
-            </button>
-
-        </div>
-
-    </section>
-
-</section>
-        <!-- =====================================
-             AUDIO PLAYER
-        ====================================== -->
-
-        <audio id="audio-player"></audio>
-
-
-
-
-        <!-- =====================================
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-audio="assets/music/song3.mp3"
+                            data-image="assets/images/song3.jpg"
+                            data-title="Song Three"
+                            data-artist="BTS"
+                        >
+
+                            <img
+                                src="assets/images/song3.jpg"
+                                alt="Song Three artwork"
+                            >
+
+                            <div>
+                                <p class="song-card-label">ENERGY</p>
+                                <h3>Song Three</h3>
+                                <p>BTS</p>
+                            </div>
+
+                        </button>
+
+
+                        <!-- SONG 4 -->
+
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-audio="assets/music/song4.mp3"
+                            data-image="assets/images/song4.jpg"
+                            data-title="Song Four"
+                            data-artist="BTS"
+                        >
+
+                            <img
+                                src="assets/images/song4.jpg"
+                                alt="Song Four artwork"
+                            >
+
+                            <div>
+                                <p class="song-card-label">ENERGY</p>
+                                <h3>Song Four</h3>
+                                <p>BTS</p>
+                            </div>
+
+                        </button>
+
+
+                        <!-- SONG 5 -->
+
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-audio="assets/music/song5.mp3"
+                            data-image="assets/images/song5.jpg"
+                            data-title="Song Five"
+                            data-artist="BTS"
+                        >
+
+                            <img
+                                src="assets/images/song5.jpg"
+                                alt="Song Five artwork"
+                            >
+
+                            <div>
+                                <p class="song-card-label">ENERGY</p>
+                                <h3>Song Five</h3>
+                                <p>BTS</p>
+                            </div>
+
+                        </button>
+
+
+                        <!-- SONG 6 -->
+
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-audio="assets/music/song6.mp3"
+                            data-image="assets/images/song6.jpg"
+                            data-title="Song Six"
+                            data-artist="BTS"
+                        >
+
+                            <img
+                                src="assets/images/song6.jpg"
+                                alt="Song Six artwork"
+                            >
+
+                            <div>
+                                <p class="song-card-label">ENERGY</p>
+                                <h3>Song Six</h3>
+                                <p>BTS</p>
+                            </div>
+
+                        </button>
+
+
+                        <!-- SONG 7 -->
+
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-audio="assets/music/song7.mp3"
+                            data-image="assets/images/song7.jpg"
+                            data-title="Song Seven"
+                            data-artist="BTS"
+                        >
+
+                            <img
+                                src="assets/images/song7.jpg"
+                                alt="Song Seven artwork"
+                            >
+
+                            <div>
+                                <p class="song-card-label">ENERGY</p>
+                                <h3>Song Seven</h3>
+                                <p>BTS</p>
+                            </div>
+
+                        </button>
+
+
+                        <!-- SONG 8 -->
+
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-audio="assets/music/song8.mp3"
+                            data-image="assets/images/song8.jpg"
+                            data-title="Song Eight"
+                            data-artist="BTS"
+                        >
+
+                            <img
+                                src="assets/images/song8.jpg"
+                                alt="Song Eight artwork"
+                            >
+
+                            <div>
+                                <p class="song-card-label">ENERGY</p>
+                                <h3>Song Eight</h3>
+                                <p>BTS</p>
+                            </div>
+
+                        </button>
+
+
+                        <!-- SONG 9 -->
+
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-audio="assets/music/song9.mp3"
+                            data-image="assets/images/song9.jpg"
+                            data-title="Song Nine"
+                            data-artist="BTS"
+                        >
+
+                            <img
+                                src="assets/images/song9.jpg"
+                                alt="Song Nine artwork"
+                            >
+
+                            <div>
+                                <p class="song-card-label">ENERGY</p>
+                                <h3>Song Nine</h3>
+                                <p>BTS</p>
+                            </div>
+
+                        </button>
+
+
+                        <!-- SONG 10 -->
+
+                        <button
+                            class="song-card"
+                            type="button"
+                            data-audio="assets/music/song10.mp3"
+                            data-image="assets/images/song10.jpg"
+                            data-title="Song Ten"
+                            data-artist="BTS"
+                        >
+
+                            <img
+                                src="assets/images/song10.jpg"
+                                alt="Song Ten artwork"
+                            >
+
+                            <div>
+                                <p class="song-card-label">ENERGY</p>
+                                <h3>Song Ten</h3>
+                                <p>BTS</p>
+                            </div>
+
+                        </button>
+
+
+                        <!-- SONGS 11–30 -->
+
+                        <button class="song-card" type="button" data-audio="assets/music/song11.mp3" data-image="assets/images/song11.jpg" data-title="Song Eleven" data-artist="BTS">
+                            <img src="assets/images/song11.jpg" alt="Song Eleven artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Eleven</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song12.mp3" data-image="assets/images/song12.jpg" data-title="Song Twelve" data-artist="BTS">
+                            <img src="assets/images/song12.jpg" alt="Song Twelve artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twelve</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song13.mp3" data-image="assets/images/song13.jpg" data-title="Song Thirteen" data-artist="BTS">
+                            <img src="assets/images/song13.jpg" alt="Song Thirteen artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Thirteen</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song14.mp3" data-image="assets/images/song14.jpg" data-title="Song Fourteen" data-artist="BTS">
+                            <img src="assets/images/song14.jpg" alt="Song Fourteen artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Fourteen</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song15.mp3" data-image="assets/images/song15.jpg" data-title="Song Fifteen" data-artist="BTS">
+                            <img src="assets/images/song15.jpg" alt="Song Fifteen artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Fifteen</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song16.mp3" data-image="assets/images/song16.jpg" data-title="Song Sixteen" data-artist="BTS">
+                            <img src="assets/images/song16.jpg" alt="Song Sixteen artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Sixteen</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song17.mp3" data-image="assets/images/song17.jpg" data-title="Song Seventeen" data-artist="BTS">
+                            <img src="assets/images/song17.jpg" alt="Song Seventeen artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Seventeen</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song18.mp3" data-image="assets/images/song18.jpg" data-title="Song Eighteen" data-artist="BTS">
+                            <img src="assets/images/song18.jpg" alt="Song Eighteen artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Eighteen</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song19.mp3" data-image="assets/images/song19.jpg" data-title="Song Nineteen" data-artist="BTS">
+                            <img src="assets/images/song19.jpg" alt="Song Nineteen artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Nineteen</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song20.mp3" data-image="assets/images/song20.jpg" data-title="Song Twenty" data-artist="BTS">
+                            <img src="assets/images/song20.jpg" alt="Song Twenty artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song21.mp3" data-image="assets/images/song21.jpg" data-title="Song Twenty-One" data-artist="BTS">
+                            <img src="assets/images/song21.jpg" alt="Song Twenty-One artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty-One</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song22.mp3" data-image="assets/images/song22.jpg" data-title="Song Twenty-Two" data-artist="BTS">
+                            <img src="assets/images/song22.jpg" alt="Song Twenty-Two artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty-Two</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song23.mp3" data-image="assets/images/song23.jpg" data-title="Song Twenty-Three" data-artist="BTS">
+                            <img src="assets/images/song23.jpg" alt="Song Twenty-Three artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty-Three</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song24.mp3" data-image="assets/images/song24.jpg" data-title="Song Twenty-Four" data-artist="BTS">
+                            <img src="assets/images/song24.jpg" alt="Song Twenty-Four artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty-Four</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song25.mp3" data-image="assets/images/song25.jpg" data-title="Song Twenty-Five" data-artist="BTS">
+                            <img src="assets/images/song25.jpg" alt="Song Twenty-Five artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty-Five</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song26.mp3" data-image="assets/images/song26.jpg" data-title="Song Twenty-Six" data-artist="BTS">
+                            <img src="assets/images/song26.jpg" alt="Song Twenty-Six artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty-Six</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song27.mp3" data-image="assets/images/song27.jpg" data-title="Song Twenty-Seven" data-artist="BTS">
+                            <img src="assets/images/song27.jpg" alt="Song Twenty-Seven artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty-Seven</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song28.mp3" data-image="assets/images/song28.jpg" data-title="Song Twenty-Eight" data-artist="BTS">
+                            <img src="assets/images/song28.jpg" alt="Song Twenty-Eight artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty-Eight</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song29.mp3" data-image="assets/images/song29.jpg" data-title="Song Twenty-Nine" data-artist="BTS">
+                            <img src="assets/images/song29.jpg" alt="Song Twenty-Nine artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Twenty-Nine</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song30.mp3" data-image="assets/images/song30.jpg" data-title="Song Thirty" data-artist="BTS">
+                            <img src="assets/images/song30.jpg" alt="Song Thirty artwork">
+                            <div><p class="song-card-label">ENERGY</p><h3>Song Thirty</h3><p>BTS</p></div>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     CALM CATEGORY
+                     ================================================= -->
+
+                <section class="song-mood">
+
+                    <div class="song-mood-heading">
+
+                        <p class="section-label">
+                            WHEN YOU NEED CALM
+                        </p>
+
+                        <h3>
+                            Take a breath
+                        </h3>
+
+                        <p>
+                            Softer songs for slower moments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="playlist-grid">
+
+                        <!-- SONGS 31–60 -->
+
+                        <button class="song-card" type="button" data-audio="assets/music/song31.mp3" data-image="assets/images/song31.jpg" data-title="Song Thirty-One" data-artist="BTS">
+                            <img src="assets/images/song31.jpg" alt="Song Thirty-One artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Thirty-One</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song32.mp3" data-image="assets/images/song32.jpg" data-title="Song Thirty-Two" data-artist="BTS">
+                            <img src="assets/images/song32.jpg" alt="Song Thirty-Two artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Thirty-Two</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song33.mp3" data-image="assets/images/song33.jpg" data-title="Song Thirty-Three" data-artist="BTS">
+                            <img src="assets/images/song33.jpg" alt="Song Thirty-Three artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Thirty-Three</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song34.mp3" data-image="assets/images/song34.jpg" data-title="Song Thirty-Four" data-artist="BTS">
+                            <img src="assets/images/song34.jpg" alt="Song Thirty-Four artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Thirty-Four</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song35.mp3" data-image="assets/images/song35.jpg" data-title="Song Thirty-Five" data-artist="BTS">
+                            <img src="assets/images/song35.jpg" alt="Song Thirty-Five artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Thirty-Five</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song36.mp3" data-image="assets/images/song36.jpg" data-title="Song Thirty-Six" data-artist="BTS">
+                            <img src="assets/images/song36.jpg" alt="Song Thirty-Six artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Thirty-Six</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song37.mp3" data-image="assets/images/song37.jpg" data-title="Song Thirty-Seven" data-artist="BTS">
+                            <img src="assets/images/song37.jpg" alt="Song Thirty-Seven artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Thirty-Seven</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song38.mp3" data-image="assets/images/song38.jpg" data-title="Song Thirty-Eight" data-artist="BTS">
+                            <img src="assets/images/song38.jpg" alt="Song Thirty-Eight artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Thirty-Eight</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song39.mp3" data-image="assets/images/song39.jpg" data-title="Song Thirty-Nine" data-artist="BTS">
+                            <img src="assets/images/song39.jpg" alt="Song Thirty-Nine artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Thirty-Nine</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song40.mp3" data-image="assets/images/song40.jpg" data-title="Song Forty" data-artist="BTS">
+                            <img src="assets/images/song40.jpg" alt="Song Forty artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song41.mp3" data-image="assets/images/song41.jpg" data-title="Song Forty-One" data-artist="BTS">
+                            <img src="assets/images/song41.jpg" alt="Song Forty-One artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty-One</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song42.mp3" data-image="assets/images/song42.jpg" data-title="Song Forty-Two" data-artist="BTS">
+                            <img src="assets/images/song42.jpg" alt="Song Forty-Two artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty-Two</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song43.mp3" data-image="assets/images/song43.jpg" data-title="Song Forty-Three" data-artist="BTS">
+                            <img src="assets/images/song43.jpg" alt="Song Forty-Three artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty-Three</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song44.mp3" data-image="assets/images/song44.jpg" data-title="Song Forty-Four" data-artist="BTS">
+                            <img src="assets/images/song44.jpg" alt="Song Forty-Four artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty-Four</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song45.mp3" data-image="assets/images/song45.jpg" data-title="Song Forty-Five" data-artist="BTS">
+                            <img src="assets/images/song45.jpg" alt="Song Forty-Five artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty-Five</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song46.mp3" data-image="assets/images/song46.jpg" data-title="Song Forty-Six" data-artist="BTS">
+                            <img src="assets/images/song46.jpg" alt="Song Forty-Six artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty-Six</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song47.mp3" data-image="assets/images/song47.jpg" data-title="Song Forty-Seven" data-artist="BTS">
+                            <img src="assets/images/song47.jpg" alt="Song Forty-Seven artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty-Seven</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song48.mp3" data-image="assets/images/song48.jpg" data-title="Song Forty-Eight" data-artist="BTS">
+                            <img src="assets/images/song48.jpg" alt="Song Forty-Eight artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty-Eight</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song49.mp3" data-image="assets/images/song49.jpg" data-title="Song Forty-Nine" data-artist="BTS">
+                            <img src="assets/images/song49.jpg" alt="Song Forty-Nine artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Forty-Nine</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song50.mp3" data-image="assets/images/song50.jpg" data-title="Song Fifty" data-artist="BTS">
+                            <img src="assets/images/song50.jpg" alt="Song Fifty artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song51.mp3" data-image="assets/images/song51.jpg" data-title="Song Fifty-One" data-artist="BTS">
+                            <img src="assets/images/song51.jpg" alt="Song Fifty-One artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty-One</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song52.mp3" data-image="assets/images/song52.jpg" data-title="Song Fifty-Two" data-artist="BTS">
+                            <img src="assets/images/song52.jpg" alt="Song Fifty-Two artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty-Two</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song53.mp3" data-image="assets/images/song53.jpg" data-title="Song Fifty-Three" data-artist="BTS">
+                            <img src="assets/images/song53.jpg" alt="Song Fifty-Three artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty-Three</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song54.mp3" data-image="assets/images/song54.jpg" data-title="Song Fifty-Four" data-artist="BTS">
+                            <img src="assets/images/song54.jpg" alt="Song Fifty-Four artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty-Four</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song55.mp3" data-image="assets/images/song55.jpg" data-title="Song Fifty-Five" data-artist="BTS">
+                            <img src="assets/images/song55.jpg" alt="Song Fifty-Five artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty-Five</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song56.mp3" data-image="assets/images/song56.jpg" data-title="Song Fifty-Six" data-artist="BTS">
+                            <img src="assets/images/song56.jpg" alt="Song Fifty-Six artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty-Six</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song57.mp3" data-image="assets/images/song57.jpg" data-title="Song Fifty-Seven" data-artist="BTS">
+                            <img src="assets/images/song57.jpg" alt="Song Fifty-Seven artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty-Seven</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song58.mp3" data-image="assets/images/song58.jpg" data-title="Song Fifty-Eight" data-artist="BTS">
+                            <img src="assets/images/song58.jpg" alt="Song Fifty-Eight artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty-Eight</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song59.mp3" data-image="assets/images/song59.jpg" data-title="Song Fifty-Nine" data-artist="BTS">
+                            <img src="assets/images/song59.jpg" alt="Song Fifty-Nine artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Fifty-Nine</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song60.mp3" data-image="assets/images/song60.jpg" data-title="Song Sixty" data-artist="BTS">
+                            <img src="assets/images/song60.jpg" alt="Song Sixty artwork">
+                            <div><p class="song-card-label">CALM</p><h3>Song Sixty</h3><p>BTS</p></div>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     COMFORT CATEGORY
+                     ================================================= -->
+
+                <section class="song-mood">
+
+                    <div class="song-mood-heading">
+
+                        <p class="section-label">
+                            WHEN YOU NEED COMFORT
+                        </p>
+
+                        <h3>
+                            Stay for a while
+                        </h3>
+
+                        <p>
+                            A little musical company for difficult days.
+                        </p>
+
+                    </div>
+
+
+                    <div class="playlist-grid">
+
+                        <!-- SONGS 61–90 -->
+
+                        <button class="song-card" type="button" data-audio="assets/music/song61.mp3" data-image="assets/images/song61.jpg" data-title="Song Sixty-One" data-artist="BTS">
+                            <img src="assets/images/song61.jpg" alt="Song Sixty-One artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Sixty-One</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song62.mp3" data-image="assets/images/song62.jpg" data-title="Song Sixty-Two" data-artist="BTS">
+                            <img src="assets/images/song62.jpg" alt="Song Sixty-Two artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Sixty-Two</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song63.mp3" data-image="assets/images/song63.jpg" data-title="Song Sixty-Three" data-artist="BTS">
+                            <img src="assets/images/song63.jpg" alt="Song Sixty-Three artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Sixty-Three</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song64.mp3" data-image="assets/images/song64.jpg" data-title="Song Sixty-Four" data-artist="BTS">
+                            <img src="assets/images/song64.jpg" alt="Song Sixty-Four artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Sixty-Four</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song65.mp3" data-image="assets/images/song65.jpg" data-title="Song Sixty-Five" data-artist="BTS">
+                            <img src="assets/images/song65.jpg" alt="Song Sixty-Five artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Sixty-Five</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song66.mp3" data-image="assets/images/song66.jpg" data-title="Song Sixty-Six" data-artist="BTS">
+                            <img src="assets/images/song66.jpg" alt="Song Sixty-Six artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Sixty-Six</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song67.mp3" data-image="assets/images/song67.jpg" data-title="Song Sixty-Seven" data-artist="BTS">
+                            <img src="assets/images/song67.jpg" alt="Song Sixty-Seven artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Sixty-Seven</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song68.mp3" data-image="assets/images/song68.jpg" data-title="Song Sixty-Eight" data-artist="BTS">
+                            <img src="assets/images/song68.jpg" alt="Song Sixty-Eight artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Sixty-Eight</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song69.mp3" data-image="assets/images/song69.jpg" data-title="Song Sixty-Nine" data-artist="BTS">
+                            <img src="assets/images/song69.jpg" alt="Song Sixty-Nine artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Sixty-Nine</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song70.mp3" data-image="assets/images/song70.jpg" data-title="Song Seventy" data-artist="BTS">
+                            <img src="assets/images/song70.jpg" alt="Song Seventy artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song71.mp3" data-image="assets/images/song71.jpg" data-title="Song Seventy-One" data-artist="BTS">
+                            <img src="assets/images/song71.jpg" alt="Song Seventy-One artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy-One</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song72.mp3" data-image="assets/images/song72.jpg" data-title="Song Seventy-Two" data-artist="BTS">
+                            <img src="assets/images/song72.jpg" alt="Song Seventy-Two artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy-Two</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song73.mp3" data-image="assets/images/song73.jpg" data-title="Song Seventy-Three" data-artist="BTS">
+                            <img src="assets/images/song73.jpg" alt="Song Seventy-Three artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy-Three</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song74.mp3" data-image="assets/images/song74.jpg" data-title="Song Seventy-Four" data-artist="BTS">
+                            <img src="assets/images/song74.jpg" alt="Song Seventy-Four artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy-Four</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song75.mp3" data-image="assets/images/song75.jpg" data-title="Song Seventy-Five" data-artist="BTS">
+                            <img src="assets/images/song75.jpg" alt="Song Seventy-Five artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy-Five</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song76.mp3" data-image="assets/images/song76.jpg" data-title="Song Seventy-Six" data-artist="BTS">
+                            <img src="assets/images/song76.jpg" alt="Song Seventy-Six artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy-Six</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song77.mp3" data-image="assets/images/song77.jpg" data-title="Song Seventy-Seven" data-artist="BTS">
+                            <img src="assets/images/song77.jpg" alt="Song Seventy-Seven artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy-Seven</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song78.mp3" data-image="assets/images/song78.jpg" data-title="Song Seventy-Eight" data-artist="BTS">
+                            <img src="assets/images/song78.jpg" alt="Song Seventy-Eight artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy-Eight</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song79.mp3" data-image="assets/images/song79.jpg" data-title="Song Seventy-Nine" data-artist="BTS">
+                            <img src="assets/images/song79.jpg" alt="Song Seventy-Nine artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Seventy-Nine</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song80.mp3" data-image="assets/images/song80.jpg" data-title="Song Eighty" data-artist="BTS">
+                            <img src="assets/images/song80.jpg" alt="Song Eighty artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song81.mp3" data-image="assets/images/song81.jpg" data-title="Song Eighty-One" data-artist="BTS">
+                            <img src="assets/images/song81.jpg" alt="Song Eighty-One artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty-One</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song82.mp3" data-image="assets/images/song82.jpg" data-title="Song Eighty-Two" data-artist="BTS">
+                            <img src="assets/images/song82.jpg" alt="Song Eighty-Two artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty-Two</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song83.mp3" data-image="assets/images/song83.jpg" data-title="Song Eighty-Three" data-artist="BTS">
+                            <img src="assets/images/song83.jpg" alt="Song Eighty-Three artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty-Three</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song84.mp3" data-image="assets/images/song84.jpg" data-title="Song Eighty-Four" data-artist="BTS">
+                            <img src="assets/images/song84.jpg" alt="Song Eighty-Four artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty-Four</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song85.mp3" data-image="assets/images/song85.jpg" data-title="Song Eighty-Five" data-artist="BTS">
+                            <img src="assets/images/song85.jpg" alt="Song Eighty-Five artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty-Five</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song86.mp3" data-image="assets/images/song86.jpg" data-title="Song Eighty-Six" data-artist="BTS">
+                            <img src="assets/images/song86.jpg" alt="Song Eighty-Six artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty-Six</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song87.mp3" data-image="assets/images/song87.jpg" data-title="Song Eighty-Seven" data-artist="BTS">
+                            <img src="assets/images/song87.jpg" alt="Song Eighty-Seven artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty-Seven</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song88.mp3" data-image="assets/images/song88.jpg" data-title="Song Eighty-Eight" data-artist="BTS">
+                            <img src="assets/images/song88.jpg" alt="Song Eighty-Eight artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty-Eight</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song89.mp3" data-image="assets/images/song89.jpg" data-title="Song Eighty-Nine" data-artist="BTS">
+                            <img src="assets/images/song89.jpg" alt="Song Eighty-Nine artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Eighty-Nine</h3><p>BTS</p></div>
+                        </button>
+
+                        <button class="song-card" type="button" data-audio="assets/music/song90.mp3" data-image="assets/images/song90.jpg" data-title="Song Ninety" data-artist="BTS">
+                            <img src="assets/images/song90.jpg" alt="Song Ninety artwork">
+                            <div><p class="song-card-label">COMFORT</p><h3>Song Ninety</h3><p>BTS</p></div>
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HIDDEN MEDIA PLAYERS
+             ================================================= -->
+
+        <!-- Normal HTML audio player for MP3 files -->
+        <audio
+            id="audio-player"
+            preload="metadata"
+        ></audio>
+
+
+        <!-- YouTube player -->
+        <div id="youtube-player"></div>
+
+
+        <!-- =================================================
              LITTLE MESSAGE
-        ====================================== -->
+             ================================================= -->
 
         <section class="music-message">
-
 
             <p class="section-label">
                 A LITTLE REMINDER
             </p>
 
-
             <h2>
-
-                You don't always need
-                <span>the right words.</span>
-
+                You don't always need <span>the right words.</span>
             </h2>
-
 
             <p>
                 Sometimes a song can say enough.
             </p>
 
-
         </section>
-
 
     </main>
 
 
-
-
-    <!-- =========================================
+    <!-- =====================================================
          FOOTER
-    ========================================== -->
+         ===================================================== -->
 
     <footer class="footer">
 
@@ -1912,16 +1050,16 @@
         </p>
 
     </footer>
+<div id="youtube-player"></div>
 
+    <!-- =====================================================
+         YOUTUBE IFRAME API
+         ===================================================== -->
 
+    <script src="https://www.youtube.com/iframe_api"></script>
 
-
-    <!-- =========================================
-         JAVASCRIPT
-    ========================================== -->
-
+    <!-- YOUR JAVASCRIPT -->
     <script src="music.js"></script>
-
 
 </body>
 

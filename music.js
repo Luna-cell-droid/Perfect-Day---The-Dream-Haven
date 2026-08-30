@@ -1,265 +1,568 @@
-/* =========================================================
-   MUSIC PLAYER
-   ========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       PLAYER ELEMENTS
+    ===================================================== */
+
+    const songImage = document.getElementById("song-image");
+    const songTitle = document.getElementById("song-title");
+    const songArtist = document.getElementById("song-artist");
+
+    const playButton = document.getElementById("play-button");
+    const previousButton = document.getElementById("previous-button");
+    const nextButton = document.getElementById("next-button");
+
+    const progressSlider = document.getElementById("song-progress");
+    const volumeControl = document.getElementById("volume-control");
+
+    const currentTimeDisplay = document.getElementById("current-time");
+    const durationDisplay = document.getElementById("song-duration");
+
+    const songCards = document.querySelectorAll(".song-card");
 
 
-const audioPlayer = document.getElementById("audio-player");
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
 
-const songImage = document.getElementById("song-image");
-const songTitle = document.getElementById("song-title");
-const songArtist = document.getElementById("song-artist");
-
-const playButton = document.getElementById("play-button");
-const previousButton = document.getElementById("previous-button");
-const nextButton = document.getElementById("next-button");
-
-const progressSlider = document.getElementById("song-progress");
-const volumeControl = document.getElementById("volume-control");
-
-const currentTimeDisplay = document.getElementById("current-time");
-const durationDisplay = document.getElementById("song-duration");
+    let currentSongIndex = 0;
+    let player = null;
+    let playerReady = false;
+    let progressInterval = null;
 
 
-/* =========================================================
-   ALL SONG CARDS
-   ========================================================= */
+    /* =====================================================
+       CHECK ELEMENTS
+    ===================================================== */
 
-const songCards = document.querySelectorAll(".song-card");
-
-let currentSongIndex = 0;
-
-
-/* =========================================================
-   LOAD SONG
-   ========================================================= */
-
-function loadSong(index) {
-
-    const card = songCards[index];
-
-    if (!card) {
+    if (!playButton) {
+        console.error("play-button was not found.");
         return;
     }
 
-    currentSongIndex = index;
-
-    const audio = card.dataset.audio;
-    const image = card.dataset.image;
-    const title = card.dataset.title;
-    const artist = card.dataset.artist;
+    if (!songCards.length) {
+        console.error("No song cards were found.");
+        return;
+    }
 
 
-    audioPlayer.src = audio;
+    /* =====================================================
+       CREATE YOUTUBE PLAYER CONTAINER
+    ===================================================== */
 
-    songImage.src = image;
-    songTitle.textContent = title;
-    songArtist.textContent = artist;
+    let youtubeContainer =
+        document.getElementById("youtube-player");
+
+    if (!youtubeContainer) {
+
+        youtubeContainer =
+            document.createElement("div");
+
+        youtubeContainer.id = "youtube-player";
+
+        document.body.appendChild(youtubeContainer);
+    }
 
 
-    progressSlider.value = 0;
+    /*
+       Hide the actual YouTube player.
 
-    currentTimeDisplay.textContent = "0:00";
-    durationDisplay.textContent = "0:00";
+       Your own player controls are what the user sees.
+    */
+
+    youtubeContainer.style.position = "fixed";
+    youtubeContainer.style.width = "1px";
+    youtubeContainer.style.height = "1px";
+    youtubeContainer.style.left = "-1000px";
+    youtubeContainer.style.top = "-1000px";
+    youtubeContainer.style.opacity = "0";
+    youtubeContainer.style.pointerEvents = "none";
 
 
-    audioPlayer.load();
-}
+    /* =====================================================
+       LOAD YOUTUBE API
+    ===================================================== */
+
+    window.onYouTubeIframeAPIReady = function () {
+
+        player = new YT.Player("youtube-player", {
+
+            width: "1",
+            height: "1",
+
+            videoId: "",
+
+            playerVars: {
+                autoplay: 0,
+                controls: 0,
+                rel: 0,
+                modestbranding: 1,
+                playsinline: 1
+            },
+
+            events: {
+
+                onReady: function () {
+
+                    playerReady = true;
+
+                    player.setVolume(100);
+
+                    console.log("YouTube player is ready!");
+
+                },
+
+                onStateChange: function (event) {
+
+                    /* PLAYING */
+
+                    if (
+                        event.data ===
+                        YT.PlayerState.PLAYING
+                    ) {
+
+                        playButton.textContent = "Ⅱ";
+
+                        startProgress();
+
+                    }
 
 
-/* =========================================================
-   PLAY / PAUSE
-   ========================================================= */
+                    /* PAUSED */
 
-function togglePlay() {
+                    if (
+                        event.data ===
+                        YT.PlayerState.PAUSED
+                    ) {
 
-    if (audioPlayer.paused) {
+                        playButton.textContent = "▶";
 
-        audioPlayer.play();
+                        stopProgress();
 
-        playButton.textContent = "Ⅱ";
+                    }
 
-    } else {
 
-        audioPlayer.pause();
+                    /* ENDED */
 
-        playButton.textContent = "▶";
+                    if (
+                        event.data ===
+                        YT.PlayerState.ENDED
+                    ) {
+
+                        playButton.textContent = "▶";
+
+                        stopProgress();
+
+                        playNextSong();
+
+                    }
+
+                },
+
+                onError: function (event) {
+
+                    console.error(
+                        "YouTube player error:",
+                        event.data
+                    );
+
+                }
+
+            }
+
+        });
+
+    };
+
+
+    /* =====================================================
+       ADD YOUTUBE API SCRIPT
+    ===================================================== */
+
+    const youtubeScript =
+        document.createElement("script");
+
+    youtubeScript.src =
+        "https://www.youtube.com/iframe_api";
+
+    document.head.appendChild(youtubeScript);
+
+
+    /* =====================================================
+       LOAD SONG
+    ===================================================== */
+
+    function loadSong(index, playImmediately = false) {
+
+        const card = songCards[index];
+
+        if (!card) {
+            return;
+        }
+
+
+        currentSongIndex = index;
+
+
+        /* Remove active class */
+
+        songCards.forEach(function (item) {
+
+            item.classList.remove("active");
+
+        });
+
+
+        /* Add active class */
+
+        card.classList.add("active");
+
+
+        /* Get information */
+
+        const youtubeID =
+            card.dataset.youtube;
+
+        const image =
+            card.dataset.image;
+
+        const title =
+            card.dataset.title;
+
+        const artist =
+            card.dataset.artist;
+
+
+        console.log("Loading song:", youtubeID);
+
+
+        /* Update player */
+
+        if (image) {
+            songImage.src = image;
+        }
+
+        if (title) {
+            songTitle.textContent = title;
+        }
+
+        if (artist) {
+            songArtist.textContent = artist;
+        }
+
+
+        /* Reset progress */
+
+        progressSlider.value = 0;
+
+        currentTimeDisplay.textContent =
+            "0:00";
+
+        durationDisplay.textContent =
+            "0:00";
+
+
+        /* Stop old song */
+
+        stopProgress();
+
+
+        if (!playerReady || !player) {
+
+            console.log(
+                "YouTube player isn't ready yet."
+            );
+
+            return;
+        }
+
+
+        /* Load YouTube video */
+
+        player.cueVideoById(youtubeID);
+
+
+        /*
+           IMPORTANT:
+           If the user clicked the card,
+           play immediately.
+        */
+
+        if (playImmediately) {
+
+            player.playVideo();
+
+        }
 
     }
 
-}
+
+    /* =====================================================
+       PLAY / PAUSE
+    ===================================================== */
+
+    playButton.addEventListener(
+        "click",
+        function () {
+
+            if (!playerReady || !player) {
+
+                console.log(
+                    "YouTube player is not ready."
+                );
+
+                return;
+            }
 
 
-playButton.addEventListener("click", togglePlay);
+            const state =
+                player.getPlayerState();
 
 
-/* =========================================================
-   SONG CARDS
-   ========================================================= */
+            /* Currently playing */
 
-songCards.forEach((card, index) => {
+            if (
+                state === YT.PlayerState.PLAYING
+            ) {
 
-    card.addEventListener("click", () => {
+                player.pauseVideo();
 
-        loadSong(index);
+            }
 
-        audioPlayer.play();
 
-        playButton.textContent = "Ⅱ";
+            /* Currently paused / ready */
+
+            else {
+
+                player.playVideo();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       SONG CARD CLICK
+    ===================================================== */
+
+    songCards.forEach(function (card, index) {
+
+        card.addEventListener(
+            "click",
+            function () {
+
+                console.log(
+                    "Card clicked:",
+                    card.dataset.title
+                );
+
+                loadSong(index, true);
+
+            }
+        );
 
     });
 
-});
+
+    /* =====================================================
+       NEXT
+    ===================================================== */
+
+    nextButton.addEventListener(
+        "click",
+        function () {
+
+            playNextSong();
+
+        }
+    );
 
 
-/* =========================================================
-   NEXT SONG
-   ========================================================= */
+    function playNextSong() {
 
-nextButton.addEventListener("click", () => {
+        currentSongIndex =
+            (currentSongIndex + 1)
+            % songCards.length;
 
-    currentSongIndex++;
+        loadSong(currentSongIndex, true);
 
-    if (currentSongIndex >= songCards.length) {
-        currentSongIndex = 0;
     }
 
-    loadSong(currentSongIndex);
 
-    audioPlayer.play();
+    /* =====================================================
+       PREVIOUS
+    ===================================================== */
 
-    playButton.textContent = "Ⅱ";
+    previousButton.addEventListener(
+        "click",
+        function () {
 
-});
+            currentSongIndex =
+                (currentSongIndex - 1 +
+                songCards.length)
+                % songCards.length;
+
+            loadSong(currentSongIndex, true);
+
+        }
+    );
 
 
-/* =========================================================
-   PREVIOUS SONG
-   ========================================================= */
+    /* =====================================================
+       PROGRESS
+    ===================================================== */
 
-previousButton.addEventListener("click", () => {
+    function startProgress() {
 
-    currentSongIndex--;
+        stopProgress();
 
-    if (currentSongIndex < 0) {
-        currentSongIndex = songCards.length - 1;
+        progressInterval =
+            setInterval(function () {
+
+                if (!playerReady || !player) {
+                    return;
+                }
+
+
+                const current =
+                    player.getCurrentTime();
+
+                const duration =
+                    player.getDuration();
+
+
+                if (!duration) {
+                    return;
+                }
+
+
+                const percentage =
+                    (current / duration) * 100;
+
+
+                progressSlider.value =
+                    percentage;
+
+
+                currentTimeDisplay.textContent =
+                    formatTime(current);
+
+                durationDisplay.textContent =
+                    formatTime(duration);
+
+            }, 250);
+
     }
 
-    loadSong(currentSongIndex);
 
-    audioPlayer.play();
+    /* =====================================================
+       STOP PROGRESS
+    ===================================================== */
 
-    playButton.textContent = "Ⅱ";
+    function stopProgress() {
 
-});
+        if (progressInterval) {
 
+            clearInterval(progressInterval);
 
-/* =========================================================
-   AUDIO PROGRESS
-   ========================================================= */
+            progressInterval = null;
 
-audioPlayer.addEventListener("timeupdate", () => {
+        }
 
-    if (!audioPlayer.duration) {
-        return;
     }
 
-    const progress =
-        (audioPlayer.currentTime / audioPlayer.duration) * 100;
 
-    progressSlider.value = progress;
+    /* =====================================================
+       SEEK
+    ===================================================== */
+
+    progressSlider.addEventListener(
+        "input",
+        function () {
+
+            if (!playerReady || !player) {
+                return;
+            }
+
+            const duration =
+                player.getDuration();
+
+            if (!duration) {
+                return;
+            }
+
+            const newTime =
+                (progressSlider.value / 100)
+                * duration;
+
+            player.seekTo(
+                newTime,
+                true
+            );
+
+        }
+    );
 
 
-    currentTimeDisplay.textContent =
-        formatTime(audioPlayer.currentTime);
+    /* =====================================================
+       VOLUME
+    ===================================================== */
 
-});
+    volumeControl.addEventListener(
+        "input",
+        function () {
+
+            if (!playerReady || !player) {
+                return;
+            }
+
+            player.setVolume(
+                Number(this.value)
+            );
+
+        }
+    );
 
 
-/* =========================================================
-   SONG DURATION
-   ========================================================= */
+    /* =====================================================
+       FORMAT TIME
+    ===================================================== */
 
-audioPlayer.addEventListener("loadedmetadata", () => {
+    function formatTime(seconds) {
 
-    durationDisplay.textContent =
-        formatTime(audioPlayer.duration);
+        if (
+            !seconds ||
+            isNaN(seconds)
+        ) {
 
-});
+            return "0:00";
+
+        }
 
 
-/* =========================================================
-   SEEK
-   ========================================================= */
+        const minutes =
+            Math.floor(seconds / 60);
 
-progressSlider.addEventListener("input", () => {
+        const remainingSeconds =
+            Math.floor(seconds % 60);
 
-    if (!audioPlayer.duration) {
-        return;
+
+        return (
+            minutes +
+            ":" +
+            String(
+                remainingSeconds
+            ).padStart(2, "0")
+        );
+
     }
 
-    audioPlayer.currentTime =
-        (progressSlider.value / 100) * audioPlayer.duration;
+
+    /* =====================================================
+       INITIAL SONG
+    ===================================================== */
+
+    loadSong(0, false);
 
 });
-
-
-/* =========================================================
-   VOLUME
-   ========================================================= */
-
-volumeControl.addEventListener("input", () => {
-
-    audioPlayer.volume = volumeControl.value;
-
-});
-
-
-/* =========================================================
-   AUTOMATICALLY PLAY NEXT SONG
-   ========================================================= */
-
-audioPlayer.addEventListener("ended", () => {
-
-    currentSongIndex++;
-
-    if (currentSongIndex >= songCards.length) {
-        currentSongIndex = 0;
-    }
-
-    loadSong(currentSongIndex);
-
-    audioPlayer.play();
-
-});
-
-
-/* =========================================================
-   TIME FORMAT
-   ========================================================= */
-
-function formatTime(seconds) {
-
-    if (isNaN(seconds)) {
-        return "0:00";
-    }
-
-    const minutes = Math.floor(seconds / 60);
-
-    const remainingSeconds =
-        Math.floor(seconds % 60);
-
-    return minutes + ":" +
-        String(remainingSeconds).padStart(2, "0");
-
-}
-
-
-/* =========================================================
-   FIRST SONG
-   ========================================================= */
-
-if (songCards.length > 0) {
-
-    loadSong(0);
-
-}
