@@ -1,0 +1,319 @@
+/* =========================================
+   PERFECT DAY — MOOD PAGE
+   ========================================= */
+
+.mood-page {
+    min-height: calc(100vh - 90px);
+    padding: 110px 8% 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.mood-header {
+    max-width: 850px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.mood-header .section-label {
+    margin-bottom: 18px;
+    color: #AAA1C8;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
+}
+
+.mood-header h1 {
+    font-family: "Gentium Plus", serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1;
+    margin: 0 0 25px;
+    color: #F4EEF7;
+}
+
+.mood-header > p:last-child {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #D7C9DF;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MOOD CARDS
+   ========================================= */
+
+.mood-selection {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.mood-card {
+    position: relative;
+    min-height: 220px;
+    padding: 32px 28px;
+    
+    border: 1px solid rgba(218, 212, 223, 0.18);
+    border-radius: 28px;
+    
+    background: rgba(72, 55, 82, 0.55);
+    backdrop-filter: blur(15px);
+    
+    color: #F4EEF7;
+    text-align: left;
+    
+    cursor: pointer;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.mood-card:hover {
+    transform: translateY(-7px);
+    background: rgba(87, 68, 98, 0.7);
+    border-color: rgba(170, 161, 200, 0.55);
+    box-shadow: 0 20px 45px rgba(20, 10, 30, 0.25);
+}
+
+.mood-card:active {
+    transform: translateY(-3px) scale(0.98);
+}
+
+
+/* Icon */
+
+.mood-icon {
+    width: 55px;
+    height: 55px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 50%;
+    
+    background: rgba(170, 161, 200, 0.18);
+    color: #AAA1C8;
+    
+    font-size: 1.6rem;
+    
+    margin-bottom: 28px;
+    
+    transition: 0.3s ease;
+}
+
+.mood-card:hover .mood-icon {
+    background: rgba(170, 161, 200, 0.3);
+    box-shadow: 0 0 25px rgba(170, 161, 200, 0.2);
+}
+
+
+/* Name */
+
+.mood-name {
+    font-family: "Gentium Plus", serif;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+    color: #F4EEF7;
+}
+
+
+/* Description */
+
+.mood-description {
+    color: #CFC3D5;
+    font-family: "Shantell Sans", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+/* Selected mood */
+
+.mood-card.selected {
+    background: rgba(170, 161, 200, 0.22);
+    border-color: #AAA1C8;
+    box-shadow:
+        0 0 30px rgba(170, 161, 200, 0.15),
+        inset 0 0 30px rgba(170, 161, 200, 0.05);
+}
+
+.mood-card.selected .mood-icon {
+    background: #AAA1C8;
+    color: #312A44;
+}
+
+
+/* =========================================
+   RESPONSE
+   ========================================= */
+
+.mood-response {
+    max-width: 900px;
+    margin: 90px auto 0;
+    padding: 65px 50px;
+    
+    text-align: center;
+    
+    border-radius: 32px;
+    border: 1px solid rgba(218, 212, 223, 0.16);
+    
+    background:
+        linear-gradient(
+            135deg,
+            rgba(72, 55, 82, 0.75),
+            rgba(87, 68, 98, 0.5)
+        );
+    
+    backdrop-filter: blur(18px);
+    
+    box-shadow: 0 25px 60px rgba(20, 10, 30, 0.18);
+}
+
+.mood-response .section-label {
+    color: #AAA1C8;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.mood-response h2 {
+    font-family: "Gentium Plus", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    color: #F4EEF7;
+    margin: 0 0 15px;
+}
+
+.mood-response p:last-child {
+    color: #D7C9DF;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MOOD HISTORY
+   ========================================= */
+
+.mood-history {
+    max-width: 1100px;
+    margin: 110px auto 0;
+    
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.mood-history > div:first-child .section-label {
+    color: #AAA1C8;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+}
+
+.mood-history h2 {
+    font-family: "Gentium Plus", serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #F4EEF7;
+    margin: 12px 0;
+}
+
+.mood-history > div:first-child p:last-child {
+    color: #CFC3D5;
+    line-height: 1.7;
+}
+
+
+/* History display */
+
+.mood-history-display {
+    min-height: 180px;
+    padding: 30px;
+    
+    border-radius: 28px;
+    border: 1px solid rgba(218, 212, 223, 0.15);
+    
+    background: rgba(72, 55, 82, 0.45);
+    backdrop-filter: blur(15px);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: #CFC3D5;
+}
+
+.mood-history-display p {
+    margin: 0;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .mood-selection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mood-history {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .mood-page {
+        padding: 80px 20px 60px;
+    }
+
+    .mood-header {
+        margin-bottom: 45px;
+    }
+
+    .mood-header h1 {
+        font-size: 3rem;
+    }
+
+    .mood-selection {
+        grid-template-columns: 1fr;
+    }
+
+    .mood-card {
+        min-height: 190px;
+    }
+
+    .mood-response {
+        padding: 45px 25px;
+        margin-top: 60px;
+    }
+
+    .mood-history {
+        margin-top: 70px;
+    }
+
+    .mood-history h2 {
+        font-size: 2.4rem;
+    }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="A Perfect Day — a quiet digital garden for music, memories, reflection, creativity and little moments of joy.">
+
+    <title>A Perfect Day</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="music.css">
+    <link rel="stylesheet" href="garden.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="mood.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="navbar-logo">
+            <a href="index.html">Perfect Day</a>
+        </div>
+
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="weather.html">Weather</a>
+            <a href="garden.html">Garden</a>
+            <a href="music.html">Music</a>
+            <a href="play.html">Play</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Mood Page -->
+    <main class="mood-page">
+
+        <!-- Introduction -->
+        <section class="mood-header">
+
+            <p class="section-label">A LITTLE CHECK-IN</p>
+
+            <h1>How are you feeling today?</h1>
+
+            <p>
+                There is no right or wrong answer.
+                Just choose what feels closest to you.
+            </p>
+
+        </section>
+
+
+        <!-- Mood Selection -->
+        <section class="mood-selection">
+
+            <button class="mood-card" data-mood="happy">
+                <span class="mood-icon">☀</span>
+                <span class="mood-name">Happy</span>
+                <span class="mood-description">Everything feels a little brighter.</span>
+            </button>
+
+            <button class="mood-card" data-mood="calm">
+                <span class="mood-icon">☁</span>
+                <span class="mood-name">Calm</span>
+                <span class="mood-description">A quiet moment feels just right.</span>
+            </button>
+
+            <button class="mood-card" data-mood="excited">
+                <span class="mood-icon">✦</span>
+                <span class="mood-name">Excited</span>
+                <span class="mood-description">Something wonderful is coming.</span>
+            </button>
+
+            <button class="mood-card" data-mood="tired">
+                <span class="mood-icon">☾</span>
+                <span class="mood-name">Tired</span>
+                <span class="mood-description">Maybe today needs a slower pace.</span>
+            </button>
+
+            <button class="mood-card" data-mood="sad">
+                <span class="mood-icon">☂</span>
+                <span class="mood-name">A little sad</span>
+                <span class="mood-description">It's okay to have softer days.</span>
+            </button>
+
+            <button class="mood-card" data-mood="overwhelmed">
+                <span class="mood-icon">☄</span>
+                <span class="mood-name">Overwhelmed</span>
+                <span class="mood-description">Take things one little step at a time.</span>
+            </button>
+
+        </section>
+
+
+        <!-- Selected Mood Response -->
+        <section class="mood-response" id="mood-response">
+
+            <p class="section-label">A LITTLE NOTE FOR YOU</p>
+
+            <h2 id="mood-title">
+                Choose a mood above.
+            </h2>
+
+            <p id="mood-message">
+                Whatever you're feeling, you have a place here.
+            </p>
+
+        </section>
+
+
+        <!-- Mood History -->
+        <section class="mood-history">
+
+            <div>
+                <p class="section-label">YOUR LITTLE RECORD</p>
+
+                <h2>Your mood garden</h2>
+
+                <p>
+                    Each check-in becomes a little part of your journey.
+                </p>
+            </div>
+
+            <div class="mood-history-display" id="mood-history">
+                <p>No moods recorded yet.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            Made for the little moments that make a day feel perfect.
+        </p>
+
+    </footer>
+
+
+    <!-- Mood JavaScript -->
+    <script src="mood.js"></script>
+
+</body>
+</html>
