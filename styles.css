@@ -1,55 +1,65 @@
 /* =========================================================
-   PERFECT DAY
+   A PERFECT DAY
    Main Stylesheet
    ========================================================= */
 
 
 /* =========================================================
-   01. VARIABLES
+   01. ROOT / DESIGN SYSTEM
    ========================================================= */
 
 :root {
 
-    /* Main palette */
-    --night-bordeaux: #481620;
-    --muted-teal: #90B494;
-    --evergreen: #03312E;
-    --lilac-ash: #AAA1C8;
-    --chocolate-plum: #593837;
+    /* ---------- Main Palette ---------- */
 
-    /* Neutrals */
-    --cream: #F5F0E9;
-    --warm-white: #FBF9F5;
+    --midnight-orchid: #312A44;
+    --dusky-lilac: #88708E;
+    --iris-mist: #BAB0C8;
+    --plum-blossom: #D7C5D6;
+    --silver-wisteria: #DAD4DF;
+
+    /* ---------- Supporting Colours ---------- */
+
+    --cream: #F7F2F0;
+    --warm-white: #FCF9F7;
     --white: #FFFFFF;
 
-    --ink: #262225;
-    --soft-ink: #625A5B;
-    --muted-text: #817879;
+    --deep-plum: #241D35;
+    --soft-plum: #443653;
 
-    /* Typography */
+    --muted-text: #6F6475;
+    --dark-text: #30293A;
+
+    /* ---------- Typography ---------- */
+
     --heading-font: "Gentium Plus", serif;
     --body-font: "Shantell Sans", sans-serif;
 
-    /* Layout */
-    --max-width: 1240px;
-    --nav-height: 82px;
+    /* ---------- Layout ---------- */
 
-    /* Corners */
+    --max-width: 1240px;
+
+    --section-padding: 110px;
+
     --radius-small: 10px;
     --radius-medium: 18px;
     --radius-large: 28px;
-    --radius-round: 999px;
 
-    /* Shadows */
+    /* ---------- Shadows ---------- */
+
     --shadow-soft:
-        0 12px 35px rgba(38, 34, 37, 0.08);
+        0 12px 35px rgba(49, 42, 68, 0.08);
 
     --shadow-medium:
-        0 20px 50px rgba(38, 34, 37, 0.13);
+        0 20px 50px rgba(49, 42, 68, 0.14);
 
-    /* Animation */
+    /* ---------- Transitions ---------- */
+
+    --transition-fast: 0.2s ease;
+
     --transition:
         0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
 }
 
 
@@ -70,15 +80,10 @@ html {
 
 
 body {
-    min-height: 100vh;
-
     background: var(--cream);
-
-    color: var(--ink);
+    color: var(--dark-text);
 
     font-family: var(--body-font);
-
-    font-size: 16px;
 
     line-height: 1.6;
 
@@ -87,30 +92,26 @@ body {
 
 
 img {
-    display: block;
-
     max-width: 100%;
+    display: block;
 }
 
 
 button,
 input,
-textarea,
-select {
+textarea {
     font: inherit;
 }
 
 
 button {
     border: none;
-
     cursor: pointer;
 }
 
 
 a {
     color: inherit;
-
     text-decoration: none;
 }
 
@@ -122,111 +123,237 @@ ol {
 
 
 /* =========================================================
-   03. TEXT
+   03. GENERAL TYPOGRAPHY
    ========================================================= */
 
 h1,
 h2,
 h3,
-h4,
-h5 {
+h4 {
     font-family: var(--heading-font);
-
     font-weight: 400;
-
     line-height: 1.05;
 }
 
 
-p {
-    color: var(--soft-ink);
+h1 span,
+h2 span {
+    display: block;
+    color: var(--dusky-lilac);
+    font-style: italic;
+}
+
+
+.section {
+    width: 100%;
+    padding: var(--section-padding) 6vw;
+}
+
+
+.section > * {
+    width: min(100%, var(--max-width));
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 .eyebrow {
     margin-bottom: 14px;
 
-    color: var(--night-bordeaux);
+    color: var(--dusky-lilac);
 
     font-family: var(--body-font);
-
-    font-size: 0.68rem;
-
+    font-size: 0.72rem;
     font-weight: 700;
 
     letter-spacing: 0.18em;
-
     text-transform: uppercase;
 }
 
 
-.section-title {
-    color: var(--evergreen);
-
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+.section-heading {
+    max-width: 680px;
 }
 
 
-.section-description {
+.section-heading h2 {
+    margin-bottom: 18px;
+
+    color: var(--midnight-orchid);
+
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+}
+
+
+.section-heading > p:last-child {
+    color: var(--muted-text);
+
+    font-size: 1rem;
+
     max-width: 570px;
-
-    margin-top: 18px;
-
-    font-size: 0.9rem;
-
-    line-height: 1.9;
 }
 
 
 /* =========================================================
-   04. NAVIGATION
+   04. BUTTONS
    ========================================================= */
 
-.navbar {
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 12px 24px;
+
+    border-radius: 999px;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    letter-spacing: 0.02em;
+
+    transition:
+        transform var(--transition),
+        background-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+
+.button-primary {
+    color: var(--white);
+    background: var(--midnight-orchid);
+
+    box-shadow:
+        0 12px 25px rgba(49, 42, 68, 0.2);
+}
+
+
+.button-primary:hover {
+    background: var(--deep-plum);
+
+    box-shadow:
+        0 16px 30px rgba(49, 42, 68, 0.25);
+}
+
+
+.button-secondary {
+    color: var(--midnight-orchid);
+
+    background: var(--plum-blossom);
+
+    border: 1px solid rgba(49, 42, 68, 0.08);
+}
+
+
+.button-secondary:hover {
+    background: var(--iris-mist);
+}
+
+
+.button-light {
+    color: var(--midnight-orchid);
+    background: var(--silver-wisteria);
+}
+
+
+.button-outline-light {
+    color: var(--white);
+
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.button-outline-light:hover {
+    color: var(--midnight-orchid);
+    background: var(--white);
+}
+
+
+.text-button {
+    padding: 0;
+
+    color: var(--dusky-lilac);
+
+    background: transparent;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.text-button:hover {
+    color: var(--midnight-orchid);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   05. NAVIGATION
+   ========================================================= */
+
+.site-header {
     position: fixed;
 
     top: 0;
     left: 0;
 
+    width: 100%;
+
     z-index: 1000;
 
-    width: 100%;
-    height: var(--nav-height);
+    padding: 18px 4vw;
 
-    display: flex;
-
-    align-items: center;
-
-    background: rgba(245, 240, 233, 0.88);
-
-    border-bottom: 1px solid rgba(3, 49, 46, 0.08);
-
-    backdrop-filter: blur(18px);
-
-    -webkit-backdrop-filter: blur(18px);
-
-    transition:
-        background var(--transition),
-        box-shadow var(--transition);
+    pointer-events: none;
 }
 
 
-.navbar-inner {
-    width: min(100% - 50px, var(--max-width));
-
-    height: 100%;
+.navbar {
+    width: min(100%, 1320px);
 
     margin: 0 auto;
 
+    padding: 13px 18px;
+
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
+
+    gap: 25px;
+
+    background: rgba(49, 42, 68, 0.82);
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 12px 35px rgba(35, 27, 50, 0.15);
+
+    pointer-events: auto;
 }
 
 
-/* Logo */
+/* ---------- Logo ---------- */
 
 .logo {
     display: flex;
@@ -235,159 +362,199 @@ p {
 
     line-height: 1;
 
-    color: var(--evergreen);
+    min-width: 150px;
 }
 
 
 .logo-main {
+    color: var(--white);
+
     font-family: var(--heading-font);
 
-    font-size: 1.65rem;
-
-    letter-spacing: 0.02em;
+    font-size: 1.35rem;
 }
 
 
-.logo-subtitle {
+.logo-sub {
     margin-top: 5px;
 
-    color: var(--chocolate-plum);
+    color: var(--plum-blossom);
 
-    font-size: 0.48rem;
+    font-size: 0.54rem;
 
-    font-weight: 700;
-
-    letter-spacing: 0.2em;
+    letter-spacing: 0.12em;
 
     text-transform: uppercase;
 }
 
 
-/* Navigation links */
+/* ---------- Navigation Links ---------- */
 
 .nav-links {
     display: flex;
 
     align-items: center;
 
-    gap: 8px;
+    gap: 24px;
 }
 
 
-.nav-links a {
-    position: relative;
+.nav-links > a,
+.dropdown-button {
+    color: rgba(255, 255, 255, 0.82);
 
-    padding: 10px 13px;
+    background: transparent;
 
-    color: var(--soft-ink);
+    font-family: var(--body-font);
 
-    font-size: 0.72rem;
-
-    font-weight: 600;
+    font-size: 0.76rem;
 
     transition:
-        color var(--transition);
+        color var(--transition-fast),
+        opacity var(--transition-fast);
 }
 
 
-.nav-links a::after {
-    content: "";
+.nav-links > a:hover,
+.dropdown-button:hover {
+    color: var(--white);
+}
 
+
+/* ---------- Dropdown ---------- */
+
+.nav-dropdown {
+    position: relative;
+}
+
+
+.dropdown-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 5px 0;
+}
+
+
+.dropdown-button span {
+    font-size: 0.85rem;
+
+    transition:
+        transform var(--transition-fast);
+}
+
+
+.nav-dropdown:hover .dropdown-button span {
+    transform: rotate(180deg);
+}
+
+
+.dropdown-menu {
     position: absolute;
 
-    left: 13px;
-    right: 13px;
+    top: calc(100% + 14px);
 
-    bottom: 5px;
+    left: 50%;
 
-    height: 1px;
+    transform:
+        translateX(-50%)
+        translateY(8px);
 
-    background: var(--night-bordeaux);
+    width: 180px;
 
-    transform: scaleX(0);
+    padding: 10px;
 
-    transform-origin: center;
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    background: var(--warm-white);
+
+    border: 1px solid rgba(49, 42, 68, 0.08);
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow-medium);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
 
     transition:
+        opacity var(--transition-fast),
+        transform var(--transition),
+        visibility var(--transition-fast);
+}
+
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+.dropdown-menu a {
+    padding: 9px 12px;
+
+    border-radius: 8px;
+
+    color: var(--dark-text);
+
+    font-size: 0.76rem;
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+
+.dropdown-menu a:hover {
+    color: var(--midnight-orchid);
+
+    background: var(--plum-blossom);
+}
+
+
+/* ---------- Quiet Space ---------- */
+
+.nav-quiet {
+    padding: 9px 16px;
+
+    color: var(--white);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 999px;
+
+    font-size: 0.7rem;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
         transform var(--transition);
 }
 
 
-.nav-links a:hover {
-    color: var(--night-bordeaux);
-}
+.nav-quiet:hover {
+    color: var(--midnight-orchid);
 
+    background: var(--white);
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    transform: scaleX(1);
-}
-
-
-/* Navigation button */
-
-.nav-button {
-    padding: 11px 19px;
-
-    border-radius: var(--radius-round);
-
-    color: var(--warm-white);
-
-    background: var(--night-bordeaux);
-
-    font-size: 0.68rem;
-
-    font-weight: 700;
-
-    transition:
-        transform var(--transition),
-        background var(--transition),
-        box-shadow var(--transition);
-}
-
-
-.nav-button:hover {
     transform: translateY(-2px);
-
-    background: var(--evergreen);
-
-    box-shadow:
-        0 8px 20px rgba(3, 49, 46, 0.15);
-}
-
-
-/* Mobile menu */
-
-.menu-toggle {
-    display: none;
-
-    width: 42px;
-    height: 42px;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    color: var(--evergreen);
-
-    background: transparent;
-
-    font-size: 1.3rem;
-}
-
-
-/* =========================================================
-   05. MAIN
-   ========================================================= */
-
-main {
-    padding-top: var(--nav-height);
-}
-
-
-section {
-    position: relative;
 }
 
 
@@ -398,9 +565,9 @@ section {
 .hero {
     position: relative;
 
-    min-height: calc(100vh - var(--nav-height));
+    min-height: 100vh;
 
-    padding: 80px 30px;
+    padding: 180px 6vw 120px;
 
     display: flex;
 
@@ -408,373 +575,219 @@ section {
 
     overflow: hidden;
 
-    background: var(--cream);
+    background:
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(186, 176, 200, 0.35),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            var(--midnight-orchid),
+            #473451 52%,
+            var(--dusky-lilac)
+        );
 }
 
 
-/* Decorative organic shape */
+/* Decorative glow */
 
 .hero::before {
     content: "";
 
     position: absolute;
 
-    width: 600px;
-    height: 600px;
+    width: 550px;
+    height: 550px;
 
-    top: -220px;
-    right: -180px;
+    right: -130px;
+    top: 80px;
 
     border-radius: 50%;
 
-    background: rgba(144, 180, 148, 0.35);
+    background:
+        radial-gradient(
+            circle,
+            rgba(215, 197, 214, 0.34),
+            transparent 68%
+        );
 
-    filter: blur(5px);
+    filter: blur(10px);
 
     pointer-events: none;
 }
 
 
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 420px;
-    height: 420px;
-
-    bottom: -220px;
-    left: -180px;
-
-    border-radius: 50%;
-
-    background: rgba(170, 161, 200, 0.20);
-
-    filter: blur(5px);
-
-    pointer-events: none;
-}
-
-
-.hero-inner {
-    position: relative;
-
-    z-index: 2;
-
-    width: min(100%, var(--max-width));
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: 1.05fr 0.95fr;
-
-    align-items: center;
-
-    gap: 70px;
-}
-
-
-/* Hero text */
-
-.hero-content {
-    max-width: 650px;
-}
-
-
-.hero-content .eyebrow {
-    animation: fadeUp 0.8s ease both;
-}
-
-
-.hero-title {
-    color: var(--evergreen);
-
-    font-size: clamp(4.5rem, 8vw, 8rem);
-
-    letter-spacing: -0.04em;
-
-    animation:
-        fadeUp 0.9s 0.1s ease both;
-}
-
-
-.hero-title em {
-    color: var(--night-bordeaux);
-
-    font-style: italic;
-}
-
-
-.hero-description {
-    max-width: 520px;
-
-    margin-top: 25px;
-
-    font-size: 0.92rem;
-
-    line-height: 1.9;
-
-    animation:
-        fadeUp 0.9s 0.2s ease both;
-}
-
-
-.hero-actions {
-    margin-top: 35px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    animation:
-        fadeUp 0.9s 0.3s ease both;
-}
-
-
-/* =========================================================
-   07. BUTTONS
-   ========================================================= */
-
-.primary-button,
-.secondary-button {
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    min-height: 48px;
-
-    padding: 12px 24px;
-
-    border-radius: var(--radius-round);
-
-    font-size: 0.7rem;
-
-    font-weight: 700;
-
-    transition:
-        transform var(--transition),
-        background var(--transition),
-        color var(--transition),
-        box-shadow var(--transition);
-}
-
-
-.primary-button {
-    color: var(--warm-white);
-
-    background: var(--evergreen);
-
-    box-shadow:
-        0 10px 25px rgba(3, 49, 46, 0.15);
-}
-
-
-.primary-button:hover {
-    transform: translateY(-3px);
-
-    background: var(--night-bordeaux);
-
-    box-shadow:
-        0 14px 30px rgba(72, 22, 32, 0.18);
-}
-
-
-.secondary-button {
-    color: var(--evergreen);
-
-    background: transparent;
-
-    border: 1px solid rgba(3, 49, 46, 0.25);
-}
-
-
-.secondary-button:hover {
-    transform: translateY(-3px);
-
-    color: var(--warm-white);
-
-    background: var(--evergreen);
-}
-
-
-/* =========================================================
-   08. HERO VISUAL
-   ========================================================= */
-
-.hero-visual {
-    position: relative;
-
-    min-height: 540px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-.hero-image-card {
-    position: relative;
-
-    width: min(100%, 480px);
-
-    aspect-ratio: 0.82;
-
-    overflow: hidden;
-
-    border-radius:
-        180px 180px 25px 25px;
-
-    background: var(--muted-teal);
-
-    box-shadow: var(--shadow-medium);
-
-    transform: rotate(2deg);
-
-    animation:
-        floatCard 7s ease-in-out infinite;
-}
-
-
-.hero-image-card img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-
-.hero-image-card::after {
-    content: "";
-
+.hero-background {
     position: absolute;
 
     inset: 0;
 
+    opacity: 0.18;
+
     background:
-        linear-gradient(
-            180deg,
-            transparent 50%,
-            rgba(3, 49, 46, 0.25)
+        radial-gradient(
+            ellipse at center,
+            transparent 0%,
+            rgba(20, 14, 30, 0.5) 100%
         );
+
+    pointer-events: none;
 }
 
 
-/* Floating mini card */
+.hero-content {
+    position: relative;
 
-.hero-note {
+    z-index: 2;
+
+    width: min(100%, 780px);
+
+    margin-left: max(0px, calc((100vw - var(--max-width)) / 2));
+
+    color: var(--white);
+}
+
+
+.hero .eyebrow {
+    color: var(--plum-blossom);
+}
+
+
+.hero h1 {
+    margin-bottom: 25px;
+
+    font-size: clamp(4rem, 8vw, 7.8rem);
+
+    letter-spacing: -0.045em;
+
+    color: var(--white);
+}
+
+
+.hero h1 span {
+    color: var(--plum-blossom);
+}
+
+
+.hero-description {
+    max-width: 600px;
+
+    margin-bottom: 35px;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+
+    line-height: 1.8;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.hero .button-secondary {
+    color: var(--white);
+
+    background: rgba(215, 197, 214, 0.15);
+
+    border-color: rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.hero .button-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ---------- Hero Decorations ---------- */
+
+.hero-decoration {
     position: absolute;
 
-    z-index: 3;
+    color: var(--plum-blossom);
 
-    right: -15px;
-    bottom: 70px;
-
-    width: 180px;
-
-    padding: 20px;
-
-    border-radius: 18px;
-
-    background:
-        rgba(251, 249, 245, 0.92);
-
-    box-shadow: var(--shadow-soft);
-
-    backdrop-filter: blur(15px);
-
-    transform: rotate(-5deg);
-}
-
-
-.hero-note-small {
-    margin-bottom: 6px;
-
-    color: var(--chocolate-plum);
-
-    font-size: 0.55rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.14em;
-
-    text-transform: uppercase;
-}
-
-
-.hero-note p {
-    color: var(--evergreen);
-
-    font-family: var(--heading-font);
-
-    font-size: 1.2rem;
-
-    line-height: 1.2;
-}
-
-
-/* Decorative flower */
-
-.hero-flower {
-    position: absolute;
-
-    z-index: 4;
-
-    top: 55px;
-    left: 10px;
-
-    color: var(--night-bordeaux);
-
-    font-size: 2rem;
-
-    transform: rotate(-20deg);
+    pointer-events: none;
 
     animation:
-        gentleFloat 5s ease-in-out infinite;
+        floatDecoration 7s ease-in-out infinite;
+}
+
+
+.hero-flower-one {
+    right: 17%;
+
+    top: 25%;
+
+    font-size: 6rem;
+
+    opacity: 0.3;
+}
+
+
+.hero-flower-two {
+    right: 10%;
+
+    bottom: 18%;
+
+    font-size: 3.5rem;
+
+    opacity: 0.4;
+
+    animation-delay: -2s;
+}
+
+
+.hero-sparkle {
+    right: 31%;
+
+    top: 18%;
+
+    font-size: 1.6rem;
+
+    opacity: 0.65;
+
+    animation-delay: -4s;
+}
+
+
+@keyframes floatDecoration {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(5deg);
+    }
+
 }
 
 
 /* =========================================================
-   09. INTRO / TODAY SECTION
+   07. TODAY
    ========================================================= */
 
 .today-section {
-    padding: 120px 30px;
-
-    background: var(--warm-white);
+    background: var(--cream);
 }
 
 
-.today-inner {
-    width: min(100%, var(--max-width));
-
-    margin: 0 auto;
+.today-section .section-heading {
+    margin-bottom: 55px;
 }
 
 
-.section-heading-row {
-    margin-bottom: 50px;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-
-    gap: 30px;
-}
-
-
-/* =========================================================
-   10. DAILY CARDS
-   ========================================================= */
-
-.daily-grid {
+.today-grid {
     display: grid;
 
     grid-template-columns:
@@ -784,18 +797,22 @@ section {
 }
 
 
-.daily-card {
-    position: relative;
-
+.today-card {
     min-height: 270px;
 
-    padding: 30px;
+    padding: 32px;
 
-    overflow: hidden;
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
 
     border-radius: var(--radius-medium);
 
-    background: var(--cream);
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
 
     transition:
         transform var(--transition),
@@ -803,37 +820,18 @@ section {
 }
 
 
-.daily-card:hover {
-    transform: translateY(-7px);
+.today-card:hover {
+    transform: translateY(-6px);
 
-    box-shadow: var(--shadow-soft);
+    box-shadow: var(--shadow-medium);
 }
 
 
-/* Individual card colours */
+.card-icon {
+    width: 46px;
+    height: 46px;
 
-.daily-card.weather {
-    background: var(--muted-teal);
-}
-
-
-.daily-card.mood {
-    color: var(--warm-white);
-
-    background: var(--night-bordeaux);
-}
-
-
-.daily-card.plan {
-    background: #E9E3E0;
-}
-
-
-.daily-card-icon {
-    width: 48px;
-    height: 48px;
-
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 
     display: flex;
 
@@ -842,659 +840,20 @@ section {
 
     border-radius: 50%;
 
-    color: var(--evergreen);
+    color: var(--midnight-orchid);
 
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--plum-blossom);
 
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 
-.daily-card h3 {
-    margin-bottom: 8px;
+.card-label {
+    margin-bottom: 9px;
 
-    color: var(--evergreen);
-
-    font-size: 2rem;
-}
-
-
-.daily-card.mood h3 {
-    color: var(--warm-white);
-}
-
-
-.daily-card p {
-    max-width: 250px;
-
-    font-size: 0.75rem;
-
-    line-height: 1.7;
-}
-
-
-.daily-card.mood p {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-
-/* Decorative number */
-
-.card-number {
-    position: absolute;
-
-    top: 20px;
-    right: 25px;
-
-    color: rgba(3, 49, 46, 0.15);
-
-    font-family: var(--heading-font);
-
-    font-size: 4rem;
-}
-
-
-/* =========================================================
-   11. QUICK ACTIONS
-   ========================================================= */
-
-.quick-section {
-    padding: 120px 30px;
-
-    background: var(--evergreen);
-
-    color: var(--warm-white);
-}
-
-
-.quick-inner {
-    width: min(100%, var(--max-width));
-
-    margin: 0 auto;
-}
-
-
-.quick-section .section-title {
-    color: var(--warm-white);
-}
-
-
-.quick-section .section-description {
-    color: rgba(255, 255, 255, 0.68);
-}
-
-
-.quick-grid {
-    margin-top: 55px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 12px;
-}
-
-
-.quick-card {
-    min-height: 190px;
-
-    padding: 25px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-
-    border-radius: var(--radius-medium);
-
-    background:
-        rgba(255, 255, 255, 0.055);
-
-    transition:
-        transform var(--transition),
-        background var(--transition);
-}
-
-
-.quick-card:hover {
-    transform: translateY(-6px);
-
-    background:
-        rgba(255, 255, 255, 0.1);
-}
-
-
-.quick-card:nth-child(2) {
-    background:
-        rgba(144, 180, 148, 0.16);
-}
-
-
-.quick-card:nth-child(3) {
-    background:
-        rgba(170, 161, 200, 0.14);
-}
-
-
-.quick-card:nth-child(4) {
-    background:
-        rgba(72, 22, 32, 0.4);
-}
-
-
-.quick-icon {
-    font-size: 1.5rem;
-}
-
-
-.quick-card h3 {
-    margin-top: auto;
-
-    color: var(--warm-white);
-
-    font-size: 1.7rem;
-}
-
-
-.quick-card p {
-    margin-top: 7px;
-
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--dusky-lilac);
 
     font-size: 0.65rem;
-}
-
-
-/* =========================================================
-   12. GARDEN PREVIEW
-   ========================================================= */
-
-.garden-section {
-    min-height: 700px;
-
-    padding: 120px 30px;
-
-    overflow: hidden;
-
-    background: var(--cream);
-}
-
-
-.garden-inner {
-    width: min(100%, var(--max-width));
-
-    margin: 0 auto;
-}
-
-
-.garden-heading {
-    text-align: center;
-}
-
-
-.garden-heading .section-description {
-    margin-right: auto;
-    margin-left: auto;
-
-    text-align: center;
-}
-
-
-/* Garden scene */
-
-.garden {
-    position: relative;
-
-    min-height: 430px;
-
-    margin-top: 60px;
-
-    overflow: hidden;
-
-    border-radius: 30px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #E8E1E8 0%,
-            #DCE7DE 50%,
-            #90B494 100%
-        );
-}
-
-
-/* Ground */
-
-.garden-ground {
-    position: absolute;
-
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-    height: 35%;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(3, 49, 46, 0),
-            rgba(3, 49, 46, 0.12)
-        );
-}
-
-
-/* Garden plants */
-
-.garden-plants {
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-evenly;
-
-    padding: 0 7% 8%;
-}
-
-
-.plant {
-    position: relative;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    transform-origin: bottom;
-
-    transition:
-        transform var(--transition);
-}
-
-
-.plant:hover {
-    transform: scale(1.08);
-}
-
-
-/* Seed */
-
-.plant.seed {
-    transform: scale(0.65);
-}
-
-
-.seed-circle {
-    width: 25px;
-    height: 25px;
-
-    border-radius: 50%;
-
-    background: var(--chocolate-plum);
-}
-
-
-/* Sprout */
-
-.plant.sprout {
-    transform: scale(0.8);
-}
-
-
-.sprout-stem {
-    width: 6px;
-    height: 70px;
-
-    border-radius: 20px;
-
-    background: var(--evergreen);
-}
-
-
-.sprout-leaf {
-    position: absolute;
-
-    width: 30px;
-    height: 18px;
-
-    border-radius:
-        100% 0 100% 0;
-
-    background: var(--muted-teal);
-}
-
-
-.sprout-leaf.left {
-    left: -20px;
-    top: 25px;
-
-    transform: rotate(-30deg);
-}
-
-
-.sprout-leaf.right {
-    right: -20px;
-    top: 42px;
-
-    transform: rotate(30deg) scaleX(-1);
-}
-
-
-/* Tree */
-
-.plant.tree {
-    transform: scale(1.15);
-}
-
-
-.tree-trunk {
-    width: 22px;
-    height: 135px;
-
-    border-radius: 20px;
-
-    background: var(--chocolate-plum);
-}
-
-
-.tree-crown {
-    position: absolute;
-
-    top: -75px;
-
-    width: 150px;
-    height: 150px;
-
-    border-radius: 50%;
-
-    background: var(--evergreen);
-
-    box-shadow:
-        -35px 20px 0 -10px var(--evergreen),
-        35px 25px 0 -8px var(--evergreen);
-}
-
-
-/* Flower */
-
-.plant.flower {
-    transform: scale(0.9);
-}
-
-
-.flower-stem {
-    width: 5px;
-    height: 105px;
-
-    border-radius: 20px;
-
-    background: var(--evergreen);
-}
-
-
-.flower-head {
-    position: absolute;
-
-    top: -25px;
-
-    width: 60px;
-    height: 60px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #F5F0E9 12%,
-            var(--lilac-ash) 13% 35%,
-            transparent 36%
-        );
-
-    box-shadow:
-        20px 0 0 -7px var(--lilac-ash),
-        -20px 0 0 -7px var(--lilac-ash),
-        0 20px 0 -7px var(--lilac-ash),
-        0 -20px 0 -7px var(--lilac-ash);
-}
-
-
-/* Garden label */
-
-.garden-message {
-    position: absolute;
-
-    left: 50%;
-    bottom: 28px;
-
-    transform: translateX(-50%);
-
-    padding: 11px 20px;
-
-    border-radius: var(--radius-round);
-
-    color: var(--warm-white);
-
-    background: rgba(3, 49, 46, 0.72);
-
-    font-size: 0.65rem;
-
-    backdrop-filter: blur(10px);
-}
-
-
-/* =========================================================
-   13. QUOTE SECTION
-   ========================================================= */
-
-.quote-section {
-    padding: 140px 30px;
-
-    background: var(--night-bordeaux);
-
-    text-align: center;
-}
-
-
-.quote-inner {
-    width: min(100%, 900px);
-
-    margin: 0 auto;
-}
-
-
-.quote-mark {
-    color: var(--muted-teal);
-
-    font-family: var(--heading-font);
-
-    font-size: 5rem;
-
-    line-height: 0.5;
-}
-
-
-.quote-text {
-    margin-top: 25px;
-
-    color: var(--warm-white);
-
-    font-family: var(--heading-font);
-
-    font-size: clamp(2.5rem, 5vw, 4.8rem);
-
-    line-height: 1.05;
-}
-
-
-.quote-source {
-    margin-top: 25px;
-
-    color: rgba(255, 255, 255, 0.55);
-
-    font-size: 0.65rem;
-
-    letter-spacing: 0.1em;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   14. CTA
-   ========================================================= */
-
-.cta-section {
-    padding: 110px 30px;
-
-    background: var(--warm-white);
-}
-
-
-.cta-box {
-    position: relative;
-
-    width: min(100%, var(--max-width));
-
-    min-height: 350px;
-
-    margin: 0 auto;
-
-    padding: 60px;
-
-    display: flex;
-
-    align-items: center;
-
-    overflow: hidden;
-
-    border-radius: 30px;
-
-    background: var(--muted-teal);
-}
-
-
-.cta-content {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 550px;
-}
-
-
-.cta-content h2 {
-    color: var(--evergreen);
-
-    font-size: clamp(3rem, 6vw, 5rem);
-}
-
-
-.cta-content p {
-    margin-top: 18px;
-
-    max-width: 450px;
-
-    color: rgba(3, 49, 46, 0.7);
-}
-
-
-.cta-content .primary-button {
-    margin-top: 28px;
-
-    background: var(--night-bordeaux);
-}
-
-
-.cta-content .primary-button:hover {
-    background: var(--evergreen);
-}
-
-
-/* CTA decorative circle */
-
-.cta-decoration {
-    position: absolute;
-
-    right: -80px;
-    bottom: -130px;
-
-    width: 430px;
-    height: 430px;
-
-    border-radius: 50%;
-
-    background: rgba(251, 249, 245, 0.25);
-}
-
-
-/* =========================================================
-   15. FOOTER
-   ========================================================= */
-
-.footer {
-    padding: 70px 30px 35px;
-
-    color: rgba(255, 255, 255, 0.7);
-
-    background: var(--evergreen);
-}
-
-
-.footer-inner {
-    width: min(100%, var(--max-width));
-
-    margin: 0 auto;
-}
-
-
-.footer-top {
-    display: grid;
-
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
-
-    gap: 50px;
-
-    padding-bottom: 60px;
-}
-
-
-.footer-brand .logo-main {
-    color: var(--warm-white);
-
-    font-size: 2rem;
-}
-
-
-.footer-brand p {
-    max-width: 300px;
-
-    margin-top: 15px;
-
-    color: rgba(255, 255, 255, 0.55);
-
-    font-size: 0.7rem;
-
-    line-height: 1.8;
-}
-
-
-.footer-column h4 {
-    margin-bottom: 18px;
-
-    color: var(--warm-white);
-
-    font-family: var(--body-font);
-
-    font-size: 0.65rem;
-
     font-weight: 700;
 
     letter-spacing: 0.14em;
@@ -1503,604 +862,2427 @@ section {
 }
 
 
-.footer-column a {
-    display: block;
+.today-card h3 {
+    margin-bottom: 10px;
 
-    margin-bottom: 9px;
+    color: var(--midnight-orchid);
 
-    color: rgba(255, 255, 255, 0.55);
-
-    font-size: 0.68rem;
-
-    transition:
-        color var(--transition),
-        transform var(--transition);
+    font-size: 1.75rem;
 }
 
 
-.footer-column a:hover {
-    color: var(--muted-teal);
+.today-card > p:not(.card-label) {
+    color: var(--muted-text);
+
+    font-size: 0.86rem;
+}
+
+
+.weather-card {
+    background: var(--plum-blossom);
+}
+
+
+.weather-card .card-icon {
+    background: var(--iris-mist);
+}
+
+
+.weather-card .text-button {
+    margin-top: auto;
+}
+
+
+.mood-card {
+    background: var(--midnight-orchid);
+
+    color: var(--white);
+}
+
+
+.mood-card h3 {
+    color: var(--white);
+}
+
+
+.mood-card .card-label {
+    color: var(--plum-blossom);
+}
+
+
+.mood-card .card-icon {
+    color: var(--midnight-orchid);
+
+    background: var(--silver-wisteria);
+}
+
+
+.mood-options {
+    margin-top: auto;
+
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.mood-options button {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    background: rgba(255, 255, 255, 0.1);
+
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.mood-options button:hover {
+    background: var(--dusky-lilac);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   08. GARDEN
+   ========================================================= */
+
+.garden-section {
+    background:
+        linear-gradient(
+            180deg,
+            var(--cream),
+            var(--silver-wisteria)
+        );
+}
+
+
+.garden-intro {
+    margin-bottom: 45px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.garden-container {
+    position: relative;
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-large);
+
+    background:
+        linear-gradient(
+            180deg,
+            #423653 0%,
+            #66516F 47%,
+            #88708E 72%,
+            #66506A 100%
+        );
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* ---------- Garden Sky ---------- */
+
+.garden-sky {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.garden-sky::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    top: 55px;
+    right: 15%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(215, 197, 214, 0.35),
+            transparent 68%
+        );
+}
+
+
+.garden-star {
+    position: absolute;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 1.2rem;
+}
+
+
+.star-one {
+    top: 15%;
+    left: 12%;
+}
+
+
+.star-two {
+    top: 23%;
+    left: 28%;
+}
+
+
+.star-three {
+    top: 11%;
+    right: 26%;
+
+    font-size: 2rem;
+}
+
+
+/* ---------- Garden Scene ---------- */
+
+.garden-scene {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+
+/* ---------- Ground ---------- */
+
+.garden-ground {
+    position: absolute;
+
+    left: -5%;
+    right: -5%;
+
+    bottom: -90px;
+
+    height: 260px;
+
+    border-radius: 50% 50% 0 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #51425D,
+            #3A3148
+        );
+
+    box-shadow:
+        0 -20px 50px rgba(31, 24, 42, 0.15);
+}
+
+
+/* ---------- Main Tree ---------- */
+
+.garden-tree {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 100px;
+
+    width: 250px;
+    height: 370px;
+
+    transform: translateX(-50%);
+}
+
+
+.tree-trunk {
+    position: absolute;
+
+    bottom: 0;
+    left: 50%;
+
+    width: 40px;
+    height: 190px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50% 50% 15% 15%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3B2B40,
+            #66506A,
+            #3B2B40
+        );
+}
+
+
+.tree-trunk::before,
+.tree-trunk::after {
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 140px;
+
+    bottom: 90px;
+
+    border-radius: 50%;
+
+    background: #4A384F;
+}
+
+
+.tree-trunk::before {
+    left: -13px;
+
+    transform:
+        rotate(-38deg);
+}
+
+
+.tree-trunk::after {
+    right: -13px;
+
+    transform:
+        rotate(38deg);
+}
+
+
+.tree-leaves {
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+
+    width: 210px;
+    height: 210px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            var(--iris-mist),
+            #806886 55%,
+            #56445E 100%
+        );
+
+    box-shadow:
+        -65px 55px 0 -25px #6F5877,
+        65px 55px 0 -25px #6F5877,
+        0 75px 0 -12px #5D4865;
+}
+
+
+/* ---------- Decorative Plants ---------- */
+
+.garden-plant {
+    position: absolute;
+
+    bottom: 90px;
+
+    width: 80px;
+    height: 180px;
+}
+
+
+.plant-one {
+    left: 15%;
+}
+
+
+.plant-two {
+    right: 17%;
+
+    transform:
+        scale(0.85);
+}
+
+
+.plant-three {
+    left: 29%;
+    bottom: 75px;
+
+    transform:
+        scale(0.65);
+}
+
+
+.plant-stem {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 5px;
+    height: 120px;
+
+    transform: translateX(-50%);
+
+    border-radius: 999px;
+
+    background: #3C3047;
+}
+
+
+.plant-flower {
+    position: absolute;
+
+    left: 50%;
+    top: 15px;
+
+    transform: translateX(-50%);
+
+    color: var(--plum-blossom);
+
+    font-family: var(--heading-font);
+
+    font-size: 4rem;
+
+    z-index: 2;
+}
+
+
+/* ---------- Seed ---------- */
+
+.garden-seed {
+    position: absolute;
+
+    left: 8%;
+    bottom: 105px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(215, 197, 214, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    animation:
+        seedGlow 3s ease-in-out infinite;
+}
+
+
+.seed-symbol {
+    color: var(--plum-blossom);
+
+    font-size: 1.4rem;
+}
+
+
+@keyframes seedGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 rgba(215, 197, 214, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px rgba(215, 197, 214, 0.25);
+    }
+
+}
+
+
+/* ---------- Garden Status ---------- */
+
+.garden-status {
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+    bottom: 25px;
+
+    z-index: 5;
+
+    padding: 20px 24px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        minmax(220px, 360px);
+
+    align-items: center;
+
+    gap: 30px;
+
+    border-radius: 16px;
+
+    background: rgba(49, 42, 68, 0.78);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(14px);
+}
+
+
+.garden-status .card-label {
+    color: var(--plum-blossom);
+
+    margin-bottom: 4px;
+}
+
+
+.garden-status h3 {
+    color: var(--white);
+
+    font-size: 1.45rem;
+}
+
+
+.progress-label {
+    margin-bottom: 7px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 0.68rem;
+}
+
+
+.progress-bar {
+    width: 100%;
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--plum-blossom),
+            var(--iris-mist)
+        );
+
+    transition:
+        width 0.7s ease;
+}
+
+
+/* =========================================================
+   09. MUSIC
+   ========================================================= */
+
+.music-section {
+    background: var(--warm-white);
+}
+
+
+.music-section .section-heading {
+    margin-bottom: 55px;
+}
+
+
+.music-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.music-card {
+    overflow: hidden;
+
+    border-radius: var(--radius-medium);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.music-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+.music-card-image {
+    min-height: 210px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 5rem;
+
+    color: var(--plum-blossom);
+
+    background:
+        radial-gradient(
+            circle at center,
+            var(--dusky-lilac),
+            var(--midnight-orchid)
+        );
+}
+
+
+.music-calm .music-card-image {
+    background:
+        radial-gradient(
+            circle at center,
+            var(--iris-mist),
+            var(--dusky-lilac)
+        );
+}
+
+
+.music-comfort .music-card-image {
+    background:
+        radial-gradient(
+            circle at center,
+            var(--plum-blossom),
+            var(--dusky-lilac)
+        );
+}
+
+
+.music-card-content {
+    padding: 27px;
+}
+
+
+.music-card-content h3 {
+    margin-bottom: 10px;
+
+    color: var(--midnight-orchid);
+
+    font-size: 2rem;
+}
+
+
+.music-card-content p:not(.card-label) {
+    min-height: 52px;
+
+    margin-bottom: 22px;
+
+    color: var(--muted-text);
+
+    font-size: 0.82rem;
+}
+
+
+.music-button {
+    color: var(--dusky-lilac);
+
+    background: transparent;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.music-button:hover {
+    color: var(--midnight-orchid);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   10. TO-DO + BRAIN DUMP
+   ========================================================= */
+
+.life-section {
+    background: var(--silver-wisteria);
+}
+
+
+.life-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 20px;
+}
+
+
+.feature-panel {
+    padding: 38px;
+
+    min-height: 500px;
+
+    border-radius: var(--radius-large);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+.todo-panel {
+    background: var(--midnight-orchid);
+}
+
+
+.brain-panel {
+    background: var(--warm-white);
+}
+
+
+.panel-heading {
+    margin-bottom: 35px;
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+.panel-heading h2 {
+    color: var(--white);
+
+    font-size: 3rem;
+}
+
+
+.brain-panel .panel-heading h2 {
+    color: var(--midnight-orchid);
+}
+
+
+.panel-heading h2 span {
+    color: var(--plum-blossom);
+}
+
+
+.brain-panel .panel-heading h2 span {
+    color: var(--dusky-lilac);
+}
+
+
+.panel-symbol {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--midnight-orchid);
+
+    background: var(--plum-blossom);
+
+    font-family: var(--heading-font);
+
+    font-size: 1.4rem;
+}
+
+
+.brain-panel .panel-symbol {
+    color: var(--white);
+
+    background: var(--midnight-orchid);
+}
+
+
+/* ---------- To-do ---------- */
+
+.todo-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 35px;
+}
+
+
+.todo-item {
+    position: relative;
+
+    min-height: 58px;
+
+    padding: 12px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    border-radius: 12px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-fast);
+}
+
+
+.todo-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+.todo-item input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.custom-checkbox {
+    width: 21px;
+    height: 21px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border-radius: 6px;
+
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+
+.todo-item input:checked + .custom-checkbox {
+    background: var(--plum-blossom);
+
+    border-color: var(--plum-blossom);
+}
+
+
+.todo-item input:checked + .custom-checkbox::after {
+    content: "✓";
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+
+    color: var(--midnight-orchid);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+
+.todo-item input:checked ~ .todo-text {
+    opacity: 0.45;
+
+    text-decoration: line-through;
+}
+
+
+.add-task {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.add-task input {
+    min-width: 0;
+    flex: 1;
+
+    padding: 13px 15px;
+
+    color: var(--white);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 10px;
+
+    outline: none;
+}
+
+
+.add-task input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+.add-task input:focus {
+    border-color: var(--plum-blossom);
+}
+
+
+.add-task button {
+    width: 48px;
+
+    border-radius: 10px;
+
+    color: var(--midnight-orchid);
+
+    background: var(--plum-blossom);
+
+    font-size: 1.4rem;
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+
+.add-task button:hover {
+    background: var(--iris-mist);
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Brain Dump ---------- */
+
+.brain-panel .panel-description {
+    margin-bottom: 18px;
+
+    color: var(--muted-text);
+
+    font-size: 0.85rem;
+}
+
+
+.brain-textarea {
+    width: 100%;
+
+    min-height: 245px;
+
+    margin-bottom: 15px;
+
+    padding: 20px;
+
+    resize: vertical;
+
+    color: var(--dark-text);
+
+    background:
+        linear-gradient(
+            rgba(215, 197, 214, 0.16),
+            rgba(215, 197, 214, 0.16)
+        );
+
+    border: 1px solid rgba(49, 42, 68, 0.08);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    line-height: 1.8;
+}
+
+
+.brain-textarea::placeholder {
+    color: #9A8E9F;
+}
+
+
+.brain-textarea:focus {
+    border-color: var(--dusky-lilac);
+
+    box-shadow:
+        0 0 0 3px rgba(136, 112, 142, 0.1);
+}
+
+
+/* =========================================================
+   11. GAMES
+   ========================================================= */
+
+.games-section {
+    background: var(--cream);
+}
+
+
+.section-heading-center {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+
+.section-heading-center > p:last-child {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.games-section .section-heading {
+    margin-bottom: 55px;
+}
+
+
+.games-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.game-card {
+    padding: 25px;
+
+    display: grid;
+
+    grid-template-columns: auto 1fr auto;
+
+    align-items: center;
+
+    gap: 17px;
+
+    border-radius: var(--radius-medium);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.game-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+.game-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--midnight-orchid);
+
+    background: var(--plum-blossom);
+
+    font-size: 1.5rem;
+}
+
+
+.game-card h3 {
+    margin-bottom: 5px;
+
+    color: var(--midnight-orchid);
+
+    font-size: 1.45rem;
+}
+
+
+.game-card p:not(.card-label) {
+    color: var(--muted-text);
+
+    font-size: 0.7rem;
+}
+
+
+.game-card > button {
+    padding: 8px 0;
+
+    color: var(--dusky-lilac);
+
+    background: transparent;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   12. MOOD + CALENDAR
+   ========================================================= */
+
+.tracking-section {
+    background: var(--plum-blossom);
+}
+
+
+.tracking-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 20px;
+}
+
+
+.tracking-card {
+    min-height: 500px;
+
+    padding: 40px;
+
+    border-radius: var(--radius-large);
+
+    background: var(--warm-white);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+.tracking-card h2 {
+    margin-bottom: 15px;
+
+    color: var(--midnight-orchid);
+
+    font-size: 3.2rem;
+}
+
+
+.tracking-card > p:not(.eyebrow) {
+    margin-bottom: 35px;
+
+    color: var(--muted-text);
+
+    font-size: 0.85rem;
+}
+
+
+/* ---------- Mood History ---------- */
+
+.mood-calendar {
+    margin-bottom: 35px;
+
+    padding: 20px 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 6px;
+
+    border-radius: 15px;
+
+    background: var(--silver-wisteria);
+}
+
+
+.mood-day {
+    min-height: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+.mood-day span {
+    color: var(--muted-text);
+
+    font-size: 0.58rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+.mood-day strong {
+    color: var(--dusky-lilac);
+
+    font-size: 1.5rem;
+
+    font-family: var(--heading-font);
+}
+
+
+/* ---------- Calendar ---------- */
+
+.calendar-card {
+    background: var(--midnight-orchid);
+}
+
+
+.calendar-card h2 {
+    color: var(--white);
+}
+
+
+.calendar-card h2 span {
+    color: var(--plum-blossom);
+}
+
+
+.calendar-header {
+    margin: 35px 0 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.calendar-header h3 {
+    color: var(--white);
+
+    font-size: 1.45rem;
+}
+
+
+.calendar-header button {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    transition:
+        background-color var(--transition-fast);
+}
+
+
+.calendar-header button:hover {
+    background: var(--dusky-lilac);
+}
+
+
+.calendar-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 5px;
+}
+
+
+.calendar-grid > span {
+    padding-bottom: 8px;
+
+    color: var(--plum-blossom);
+
+    font-size: 0.55rem;
+
+    text-align: center;
+}
+
+
+.calendar-grid button {
+    aspect-ratio: 1;
+
+    border-radius: 8px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    font-size: 0.72rem;
+
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.calendar-grid button:hover {
+    background: var(--dusky-lilac);
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   13. FLOWEROPEDIA
+   ========================================================= */
+
+.flower-section {
+    background: var(--warm-white);
+}
+
+
+.flower-intro {
+    margin-bottom: 45px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.flower-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.flower-card {
+    overflow: hidden;
+
+    border-radius: var(--radius-medium);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.flower-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+.flower-visual {
+    min-height: 240px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--plum-blossom);
+
+    background:
+        radial-gradient(
+            circle,
+            var(--dusky-lilac),
+            var(--midnight-orchid)
+        );
+
+    font-family: var(--heading-font);
+
+    font-size: 6rem;
+}
+
+
+.flower-card:nth-child(2) .flower-visual {
+    background:
+        radial-gradient(
+            circle,
+            var(--iris-mist),
+            var(--dusky-lilac)
+        );
+}
+
+
+.flower-card:nth-child(3) .flower-visual {
+    background:
+        radial-gradient(
+            circle,
+            var(--plum-blossom),
+            var(--iris-mist)
+        );
+
+    color: var(--midnight-orchid);
+}
+
+
+.flower-information {
+    padding: 25px;
+}
+
+
+.flower-information h3 {
+    margin-bottom: 8px;
+
+    color: var(--midnight-orchid);
+
+    font-size: 1.8rem;
+}
+
+
+.flower-information p:not(.card-label) {
+    color: var(--muted-text);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   14. QUOTES
+   ========================================================= */
+
+.quote-section {
+    min-height: 550px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #574363,
+            var(--midnight-orchid) 70%
+        );
+
+    color: var(--white);
+
+    overflow: hidden;
+}
+
+
+.quote-section .eyebrow {
+    color: var(--plum-blossom);
+}
+
+
+.quote-decoration {
+    margin-bottom: -25px;
+
+    color: var(--dusky-lilac);
+
+    font-family: var(--heading-font);
+
+    font-size: 8rem;
+
+    line-height: 0.8;
+
+    opacity: 0.5;
+}
+
+
+.quote-section blockquote {
+    width: min(850px, 90%);
+
+    margin: 0 auto 35px;
+
+    color: var(--white);
+
+    font-family: var(--heading-font);
+
+    font-size: clamp(2.2rem, 5vw, 4rem);
+
+    line-height: 1.2;
+}
+
+
+.quote-button {
+    color: var(--plum-blossom);
+
+    background: transparent;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.quote-button:hover {
+    color: var(--white);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   15. JOURNAL
+   ========================================================= */
+
+.journal-section {
+    background: var(--cream);
+}
+
+
+.journal-grid {
+    display: grid;
+
+    grid-template-columns:
+        0.85fr
+        1.15fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+.journal-content h2 {
+    margin-bottom: 20px;
+
+    color: var(--midnight-orchid);
+
+    font-size: clamp(3rem, 5vw, 4.5rem);
+}
+
+
+.journal-content > p:not(.eyebrow) {
+    max-width: 430px;
+
+    margin-bottom: 30px;
+
+    color: var(--muted-text);
+}
+
+
+.journal-preview {
+    min-height: 450px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: var(--radius-large);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-medium);
+
+    transform:
+        rotate(1deg);
+}
+
+
+.journal-date {
+    margin-bottom: 20px;
+
+    color: var(--dusky-lilac);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+
+.journal-preview textarea {
+    flex: 1;
+
+    width: 100%;
+
+    resize: none;
+
+    border: none;
+
+    outline: none;
+
+    color: var(--dark-text);
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 35px,
+            rgba(49, 42, 68, 0.08) 36px
+        );
+
+    font-family: var(--heading-font);
+
+    font-size: 1.2rem;
+
+    line-height: 36px;
+}
+
+
+.journal-preview textarea::placeholder {
+    color: #B0A4B4;
+}
+
+
+.journal-footer {
+    padding-top: 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-top: 1px solid rgba(49, 42, 68, 0.08);
+}
+
+
+.journal-footer span {
+    color: var(--muted-text);
+
+    font-size: 0.65rem;
+}
+
+
+.journal-footer button {
+    padding: 9px 15px;
+
+    border-radius: 999px;
+
+    color: var(--white);
+
+    background: var(--midnight-orchid);
+
+    font-size: 0.65rem;
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+
+.journal-footer button:hover {
+    background: var(--dusky-lilac);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   16. QUIET SPACE
+   ========================================================= */
+
+.quiet-section {
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(136, 112, 142, 0.45),
+            transparent 30%
+        ),
+        var(--midnight-orchid);
+
+    color: var(--white);
+}
+
+
+.quiet-content {
+    width: min(100%, 700px);
+}
+
+
+.quiet-symbol {
+    display: block;
+
+    margin-bottom: 35px;
+
+    color: var(--plum-blossom);
+
+    font-family: var(--heading-font);
+
+    font-size: 4rem;
+
+    animation:
+        quietFloat 5s ease-in-out infinite;
+}
+
+
+@keyframes quietFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+.quiet-section .eyebrow {
+    color: var(--plum-blossom);
+}
+
+
+.quiet-section h2 {
+    margin-bottom: 18px;
+
+    color: var(--white);
+
+    font-size: clamp(3rem, 6vw, 5rem);
+}
+
+
+.quiet-section h2 span {
+    color: var(--plum-blossom);
+}
+
+
+.quiet-section p:not(.eyebrow) {
+    margin-bottom: 32px;
+
+    color: rgba(255, 255, 255, 0.62);
+}
+
+
+.quiet-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   17. FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding: 70px 6vw 25px;
+
+    color: var(--white);
+
+    background: #241D35;
+}
+
+
+.footer-main {
+    width: min(100%, var(--max-width));
+
+    margin: 0 auto;
+
+    padding-bottom: 50px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 60px;
+}
+
+
+.footer-brand {
+    max-width: 350px;
+}
+
+
+.footer-brand h2 {
+    margin-bottom: 12px;
+
+    color: var(--plum-blossom);
+
+    font-size: 2.6rem;
+}
+
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.78rem;
+
+    line-height: 1.8;
+}
+
+
+.footer-links {
+    display: flex;
+
+    gap: 90px;
+}
+
+
+.footer-links > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+.footer-title {
+    margin-bottom: 7px;
+
+    color: var(--plum-blossom);
+
+    font-size: 0.62rem;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+}
+
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 0.72rem;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.footer-links a:hover {
+    color: var(--white);
 
     transform: translateX(3px);
 }
 
 
 .footer-bottom {
-    padding-top: 25px;
+    width: min(100%, var(--max-width));
+
+    margin: 0 auto;
+
+    padding-top: 20px;
 
     display: flex;
 
-    align-items: center;
-
     justify-content: space-between;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 
-
-.footer-bottom p {
     color: rgba(255, 255, 255, 0.4);
 
-    font-size: 0.58rem;
+    font-size: 0.62rem;
 }
 
 
 /* =========================================================
-   16. GENERAL PAGE HEADER
+   18. RESPONSIVE — TABLET
    ========================================================= */
 
-.page-header {
-    position: relative;
-
-    padding: 130px 30px 90px;
-
-    overflow: hidden;
-
-    background: var(--cream);
-
-    text-align: center;
-}
-
-
-.page-header::before {
-    content: "";
-
-    position: absolute;
-
-    width: 350px;
-    height: 350px;
-
-    top: -170px;
-    left: -100px;
-
-    border-radius: 50%;
-
-    background: rgba(144, 180, 148, 0.3);
-}
-
-
-.page-header::after {
-    content: "";
-
-    position: absolute;
-
-    width: 280px;
-    height: 280px;
-
-    right: -80px;
-    bottom: -140px;
-
-    border-radius: 50%;
-
-    background: rgba(170, 161, 200, 0.25);
-}
-
-
-.page-header-content {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 800px;
-
-    margin: 0 auto;
-}
-
-
-.page-header h1 {
-    color: var(--evergreen);
-
-    font-size: clamp(4rem, 8vw, 7rem);
-}
-
-
-.page-header p {
-    max-width: 550px;
-
-    margin: 20px auto 0;
-
-    font-size: 0.85rem;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   17. FORM ELEMENTS
-   ========================================================= */
-
-input,
-textarea,
-select {
-    width: 100%;
-
-    padding: 14px 16px;
-
-    border: 1px solid rgba(3, 49, 46, 0.14);
-
-    border-radius: var(--radius-small);
-
-    outline: none;
-
-    color: var(--ink);
-
-    background: var(--warm-white);
-
-    transition:
-        border-color var(--transition),
-        box-shadow var(--transition);
-}
-
-
-input:focus,
-textarea:focus,
-select:focus {
-    border-color: var(--muted-teal);
-
-    box-shadow:
-        0 0 0 4px rgba(144, 180, 148, 0.18);
-}
-
-
-textarea {
-    min-height: 180px;
-
-    resize: vertical;
-}
-
-
-::placeholder {
-    color: #A39A9B;
-}
-
-
-/* =========================================================
-   18. UTILITY CARDS
-   ========================================================= */
-
-.glass-card {
-    border: 1px solid rgba(255, 255, 255, 0.65);
-
-    border-radius: var(--radius-medium);
-
-    background:
-        rgba(251, 249, 245, 0.68);
-
-    box-shadow: var(--shadow-soft);
-
-    backdrop-filter: blur(18px);
-
-    -webkit-backdrop-filter: blur(18px);
-}
-
-
-.bordeaux-card {
-    color: var(--warm-white);
-
-    background: var(--night-bordeaux);
-}
-
-
-.teal-card {
-    color: var(--evergreen);
-
-    background: var(--muted-teal);
-}
-
-
-.lilac-card {
-    color: var(--evergreen);
-
-    background: var(--lilac-ash);
-}
-
-
-.plum-card {
-    color: var(--warm-white);
-
-    background: var(--chocolate-plum);
-}
-
-
-/* =========================================================
-   19. SCROLL REVEAL
-   ========================================================= */
-
-.reveal {
-    opacity: 0;
-
-    transform: translateY(30px);
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-}
-
-
-.reveal.visible {
-    opacity: 1;
-
-    transform: translateY(0);
-}
-
-
-/* =========================================================
-   20. ANIMATIONS
-   ========================================================= */
-
-@keyframes fadeUp {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-}
-
-
-@keyframes floatCard {
-
-    0%,
-    100% {
-        transform:
-            rotate(2deg)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            rotate(1deg)
-            translateY(-10px);
-    }
-}
-
-
-@keyframes gentleFloat {
-
-    0%,
-    100% {
-        transform:
-            rotate(-20deg)
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            rotate(-14deg)
-            translateY(-8px);
-    }
-}
-
-
-/* =========================================================
-   21. SELECTION
-   ========================================================= */
-
-::selection {
-    color: var(--warm-white);
-
-    background: var(--night-bordeaux);
-}
-
-
-/* =========================================================
-   22. SCROLLBAR
-   ========================================================= */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-
-::-webkit-scrollbar-track {
-    background: var(--cream);
-}
-
-
-::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-
-    background: var(--chocolate-plum);
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--night-bordeaux);
-}
-
-
-/* =========================================================
-   23. RESPONSIVE — TABLET
-   ========================================================= */
-
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
 
     .nav-links {
-        gap: 0;
-    }
-
-    .nav-links a {
-        padding: 10px 8px;
-
-        font-size: 0.65rem;
+        gap: 14px;
     }
 
 
-    .hero-inner {
+    .nav-links > a,
+    .dropdown-button {
+        font-size: 0.68rem;
+    }
+
+
+    .nav-quiet {
+        font-size: 0.62rem;
+
+        padding: 8px 12px;
+    }
+
+
+    .today-grid,
+    .music-grid,
+    .games-grid,
+    .flower-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .today-card:last-child,
+    .music-card:last-child,
+    .game-card:last-child,
+    .flower-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+
+    .tracking-grid {
         grid-template-columns: 1fr;
-
-        text-align: center;
     }
 
 
-    .hero-content {
-        max-width: 700px;
-
-        margin: 0 auto;
+    .garden-container {
+        min-height: 560px;
     }
 
-
-    .hero-description {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-
-    .hero-actions {
-        justify-content: center;
-    }
-
-
-    .hero-visual {
-        min-height: 450px;
-    }
-
-
-    .daily-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-
-    .daily-card:last-child {
-        grid-column: span 2;
-    }
-
-
-    .quick-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-
-    .footer-top {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
 }
 
 
 /* =========================================================
-   24. RESPONSIVE — MOBILE
+   19. RESPONSIVE — MOBILE
    ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 760px) {
 
     :root {
-        --nav-height: 70px;
+        --section-padding: 75px;
     }
 
 
-    .navbar-inner {
-        width: min(100% - 30px, var(--max-width));
+    .section {
+        padding-left: 5vw;
+        padding-right: 5vw;
     }
 
 
-    .nav-links,
-    .nav-button {
+    /* ---------- Navigation ---------- */
+
+    .site-header {
+        padding: 10px 3vw;
+    }
+
+
+    .navbar {
+        padding: 12px 15px;
+
+        border-radius: 15px;
+    }
+
+
+    .nav-links {
         display: none;
     }
 
 
-    .menu-toggle {
-        display: flex;
+    .logo {
+        min-width: 0;
     }
 
 
-    main {
-        padding-top: var(--nav-height);
+    .logo-main {
+        font-size: 1.15rem;
     }
 
+
+    .nav-quiet {
+        font-size: 0.6rem;
+    }
+
+
+    /* ---------- Hero ---------- */
 
     .hero {
-        min-height: auto;
+        min-height: 90vh;
 
         padding:
-            80px 20px
-            70px;
+            150px
+            6vw
+            80px;
     }
 
 
-    .hero-title {
-        font-size: clamp(4rem, 18vw, 6rem);
+    .hero h1 {
+        font-size: clamp(3.5rem, 15vw, 5.5rem);
     }
 
 
     .hero-description {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
 
-    .hero-actions {
+    .hero-flower-one {
+        right: -15%;
+
+        top: 24%;
+
+        font-size: 5rem;
+    }
+
+
+    .hero-flower-two {
+        right: 5%;
+
+        bottom: 10%;
+    }
+
+
+    /* ---------- General ---------- */
+
+    .section-heading h2 {
+        font-size: 3rem;
+    }
+
+
+    /* ---------- Cards ---------- */
+
+    .today-grid,
+    .music-grid,
+    .games-grid,
+    .flower-grid,
+    .life-grid,
+    .tracking-grid,
+    .journal-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .today-card:last-child,
+    .music-card:last-child,
+    .game-card:last-child,
+    .flower-card:last-child {
+        grid-column: auto;
+    }
+
+
+    /* ---------- Garden ---------- */
+
+    .garden-intro,
+    .flower-intro {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .garden-container {
+        min-height: 600px;
+
+        border-radius: 20px;
+    }
+
+
+    .garden-tree {
+        transform:
+            translateX(-50%)
+            scale(0.8);
+
+        transform-origin: bottom center;
+    }
+
+
+    .garden-plant.plant-one {
+        left: 3%;
+    }
+
+
+    .garden-plant.plant-two {
+        right: 3%;
+    }
+
+
+    .garden-status {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+
+        padding: 16px;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    /* ---------- Life ---------- */
+
+    .feature-panel {
+        min-height: 450px;
+
+        padding: 28px;
+    }
+
+
+    .panel-heading h2 {
+        font-size: 2.5rem;
+    }
+
+
+    /* ---------- Games ---------- */
+
+    .game-card {
+        grid-template-columns: auto 1fr;
+    }
+
+
+    .game-card > button {
+        grid-column: 2;
+
+        justify-self: start;
+    }
+
+
+    /* ---------- Mood ---------- */
+
+    .mood-calendar {
+        overflow-x: auto;
+
+        grid-template-columns:
+            repeat(7, minmax(55px, 1fr));
+    }
+
+
+    /* ---------- Journal ---------- */
+
+    .journal-grid {
+        gap: 40px;
+    }
+
+
+    .journal-preview {
+        min-height: 400px;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    .footer-main {
+        flex-direction: column;
+    }
+
+
+    .footer-links {
+        gap: 50px;
+    }
+
+}
+
+
+/* =========================================================
+   20. VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .hero {
+        padding-top: 130px;
+    }
+
+
+    .hero-buttons {
         flex-direction: column;
 
         align-items: stretch;
     }
 
 
-    .hero-actions a {
+    .hero-buttons .button {
         width: 100%;
     }
 
 
-    .hero-visual {
-        min-height: 400px;
-
-        margin-top: 20px;
+    .section-heading h2 {
+        font-size: 2.5rem;
     }
 
 
-    .hero-image-card {
-        width: 85%;
+    .garden-container {
+        min-height: 560px;
     }
 
 
-    .hero-note {
-        right: 0;
-
-        bottom: 30px;
+    .garden-tree {
+        transform:
+            translateX(-50%)
+            scale(0.65);
     }
 
 
-    .today-section,
-    .quick-section,
-    .garden-section,
-    .quote-section,
-    .cta-section {
-        padding:
-            80px 20px;
+    .garden-plant {
+        display: none;
     }
 
 
-    .section-heading-row {
-        align-items: flex-start;
+    .garden-seed {
+        left: 5%;
+    }
 
+
+    .footer-links {
         flex-direction: column;
-    }
 
-
-    .daily-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .daily-card:last-child {
-        grid-column: auto;
-    }
-
-
-    .quick-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .quick-card {
-        min-height: 160px;
-    }
-
-
-    .garden {
-        min-height: 380px;
-
-        border-radius: 20px;
-    }
-
-
-    .garden-plants {
-        padding-right: 3%;
-        padding-left: 3%;
-    }
-
-
-    .plant.tree {
-        transform: scale(0.8);
-    }
-
-
-    .plant.flower {
-        transform: scale(0.7);
-    }
-
-
-    .plant.sprout {
-        transform: scale(0.65);
-    }
-
-
-    .quote-text {
-        font-size: 2.7rem;
-    }
-
-
-    .cta-box {
-        padding: 40px 30px;
-    }
-
-
-    .footer {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-
-
-    .footer-top {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
+        gap: 30px;
     }
 
 
     .footer-bottom {
-        align-items: flex-start;
+        gap: 15px;
 
         flex-direction: column;
-
-        gap: 10px;
     }
+
+}
+.hero-world {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    width: 40%;
+    height: 75%;
+    transform: translateY(-50%);
+}
+.world-moon {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(170, 161, 200, 0.18);
+    filter: blur(3px);
+    top: 10%;
+    right: 15%;
+}
+.world-star {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    animation: worldTwinkle 4s ease-in-out infinite;
 }
 
+.star-one {
+    top: 5%;
+    right: 10%;
+    font-size: 28px;
+}
 
-/* =========================================================
-   25. REDUCED MOTION
-   ========================================================= */
+.star-two {
+    top: 35%;
+    right: 60%;
+    font-size: 15px;
+}
 
-@media (prefers-reduced-motion: reduce) {
+.star-three {
+    bottom: 20%;
+    right: 5%;
+    font-size: 20px;
+}
+@keyframes worldTwinkle {
+    50% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+}
+.hero-player {
+    position: absolute;
+    width: 360px;
+    padding: 28px;
+    right: 12%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid rgba(215, 197, 216, 0.25);
+    border-radius: 24px;
+    background: rgba(49, 42, 68, 0.45);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 60px rgba(30, 20, 45, 0.3);
+}
+.player-art {
+    width: 100%;
+    height: 210px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        135deg,
+        #312a44,
+        #593837,
+        #aaa1c8
+    );
+    box-shadow: 0 0 35px rgba(170, 161, 200, 0.2);
+}
 
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
+.player-art span {
+    font-size: 55px;
+    color: #eee7f2;
+}
+.player-label {
+    margin-top: 22px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #aaa1c8;
+}
 
-        animation-duration: 0.01ms !important;
+.player-details h3 {
+    margin: 6px 0;
+    color: #f3edf5;
+    font-family: "Gentium Plus", serif;
+    font-size: 24px;
+}
 
-        animation-iteration-count: 1 !important;
+.player-song {
+    margin: 0;
+    color: #eee7f2;
+}
 
-        transition-duration: 0.01ms !important;
+.player-artist {
+    margin: 4px 0 20px;
+    color: #aaa1c8;
+}
+.player-label {
+    margin-top: 22px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #aaa1c8;
+}
+
+.player-details h3 {
+    margin: 6px 0;
+    color: #f3edf5;
+    font-family: "Gentium Plus", serif;
+    font-size: 24px;
+}
+
+.player-song {
+    margin: 0;
+    color: #eee7f2;
+}
+
+.player-artist {
+    margin: 4px 0 20px;
+    color: #aaa1c8;
+}
+.player-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    color: #aaa1c8;
+}
+
+.progress-line {
+    position: relative;
+    flex: 1;
+    height: 2px;
+    background: rgba(238, 231, 242, 0.25);
+}
+
+.progress-dot {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d7c5d8;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(215, 197, 216, 0.7);
+}
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin-top: 22px;
+}
+
+.player-controls button {
+    border: none;
+    background: transparent;
+    color: #eee7f2;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.player-controls .player-play {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #aaa1c8;
+    color: #312a44;
+    font-size: 16px;
+    box-shadow: 0 0 25px rgba(170, 161, 200, 0.35);
+}
+.hero-player {
+    animation: playerFloat 6s ease-in-out infinite;
+}
+
+@keyframes playerFloat {
+    0%, 100% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 8px));
     }
 }
