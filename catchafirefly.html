@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Garden</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400&family=Shantell+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+  <!-- LINK TO SEPARATE CSS FILE -->
+  <link rel="stylesheet" href="catchafirefly.css">
+</head>
+<body>
+    <div class="game-container">
+    <div class="game-header">
+      <p class="game-subtitle">GAME 02</p>
+      <h1>Catch a Firefly</h1>
+      <p class="game-desc">A tiny game for a tiny break.</p>
+    </div>
+
+    <div class="stats-bar">
+      <span>Caught: <strong id="score">0</strong></span>
+      <span>Time: <strong id="timer">20</strong>s</span>
+      <button id="start-btn" class="start-btn">Start</button>
+    </div>
+
+    <div class="night-sky" id="night-sky">
+      <div id="start-message" class="overlay-msg">Click "Start" to catch fireflies! ✨</div>
+    </div>
+  </div>
+
+  <script src="catchafirefly.js"></script>
+</body>
+</html>
