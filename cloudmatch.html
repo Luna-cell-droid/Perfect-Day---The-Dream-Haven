@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Garden</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400&family=Shantell+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+  <!-- LINK TO SEPARATE CSS FILE -->
+  <link rel="stylesheet" href="cloudmatch.css">
+</head>
+<body>
+    <div class="game-container">
+    <div class="game-header">
+      <p class="game-subtitle">GAME 03</p>
+      <h1>Cloud Match</h1>
+      <p class="game-desc">Slow down and find the pairs.</p>
+    </div>
+
+    <div class="stats-bar">
+      <span>Matched: <strong id="pairs-count">0</strong> / 6</span>
+      <button id="reset-btn" class="reset-btn">Reset</button>
+    </div>
+
+    <div class="cloud-grid" id="cloud-grid"></div>
+
+    <div id="win-message" class="win-message hidden">
+      ☁️ Clear skies ahead! Great job! ☀️
+    </div>
+  </div>
+
+  <script src="cloudmatch.js"></script>
+</body>
+</html>
