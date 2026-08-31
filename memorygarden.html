@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Garden</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400&family=Shantell+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+  <!-- LINK TO SEPARATE CSS FILE -->
+  <link rel="stylesheet" href="memorygarden.css">
+</head>
+<body>
+
+  <div class="game-container">
+    <div class="game-header">
+      <p class="game-subtitle">GAME 01</p>
+      <h1>Memory Garden</h1>
+      <p class="game-desc">Find the matching flowers.</p>
+    </div>
+
+    <div class="stats-bar">
+      <span>Matches: <strong id="matches-count">0</strong> / 6</span>
+      <span>Moves: <strong id="moves-count">0</strong></span>
+      <button id="reset-btn" class="reset-btn">Reset</button>
+    </div>
+
+    <div class="memory-grid" id="memory-grid"></div>
+
+    <div id="win-message" class="win-message hidden">
+      ✨ Beautiful garden! You matched them all! ✨
+    </div>
+  </div>
+
+  <!-- LINK TO SEPARATE JS FILE -->
+  <script src="memory-garden.js"></script>
+</body>
+</html>
